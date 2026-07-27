@@ -351,7 +351,7 @@ img {
 
 .puerquito {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-self: center;
     animation:
         aparecer 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
@@ -398,13 +398,13 @@ img {
 
 .boton__puntero {
     display: flex;
-    /* Pone el botón y el puntero en la misma línea */
+    
     justify-content: center;
-    /* Centra el grupo horizontalmente */
+   
     align-items: center;
-    /* Alinea verticalmente el puntero con el botón */
+    
     gap: 0rem;
-    /* Espacio opcional entre el botón y el puntero */
+   
     width: 100%;
     grid-column: 1/3;
     grid-row: 2/3;
@@ -415,7 +415,7 @@ img {
         grid-column: 2/3;
         grid-row: 2/3;
         position: relative;
-        bottom: 250%;
+        bottom: 150%;
     }
 }
 
@@ -443,7 +443,7 @@ img {
 
 @media (min-width: 768px) {
     .imagen_temporada {
-        width: 80%;
+        width: 70%;
     }
 }
 
