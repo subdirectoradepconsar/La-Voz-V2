@@ -140,17 +140,48 @@
     border-radius: 0.5rem;
 }
 
+/* Estructura base para la etiqueta/cuadro del día */
 .cumpleaños__dia {
-    background-color: rgb(132, 36, 36);
-    color: var(--blanco);
     font-size: 1.8rem;
     margin: 1rem 0 0 0;
+    color: #ffffff; /* Texto blanco asegurado para todas las variantes */
 }
 @media (min-width: 768px) {
     .cumpleaños__dia {
         font-size: 1.8rem;
     }
 }
+
+/* ==========================================================
+   COLORES POR DEPARTAMENTO (.cumpleaños__dia)
+   ========================================================== */
+
+/* Vicepresidencia de Jurídica */
+.cumpleaños__dia--juridica {
+    background-color: #003366;
+}
+
+/* Coordinación General de Información y Vinculación */
+.cumpleaños__dia--informacion {
+    background-color: #1E7E34;
+}
+
+/* Unidad de Administración y Finanzas */
+.cumpleaños__dia--admin {
+    background-color: #C0392B;
+}
+
+/* Vicepresidencia de Operaciones */
+.cumpleaños__dia--operaciones {
+    background-color: #800080;
+}
+
+/* Vicepresidencia Financiera */
+.cumpleaños__dia--financiera {
+    background-color: #008080;
+}
+
+/* ========================================================== */
 
 .nombre__persona {
     font-size: 1.8rem;
