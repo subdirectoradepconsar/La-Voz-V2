@@ -20,8 +20,8 @@
     border: 0.1rem solid black;
     box-shadow: inset 0 0 0 0.2rem black;
     position: relative;
-    display: grid; 
-    
+    display: grid;
+
     width: 90%;
     background-color: var(--blanco);
     padding: 1rem;
@@ -70,6 +70,7 @@
     justify-self: center;
     width: 100%;
 }
+
 @media (min-width: 768px) {
     .texto__caja {
         grid-column: 1/5;
@@ -87,6 +88,7 @@
     font-size: 2rem;
     margin: 0;
 }
+
 @media (min-width: 768px) {
     .texto__caja--crecimiento {
         font-size: 2.7rem;
@@ -110,14 +112,17 @@
     font-weight: bold;
     font-size: 1.8rem;
     margin: 0;
-    padding: 1rem; /* Espaciado interno */
+    padding: 1rem;
+    /* Espaciado interno */
     border-bottom: 0.3rem solid black;
 }
+
 @media (min-width: 768px) {
     .subtitulo__crecimiento {
         font-size: 1.3rem;
     }
 }
+
 hr {
     border: 0;
     height: 2px;
@@ -167,11 +172,14 @@ hr {
 .crecimiento_txt {
     font-size: 1.5rem;
     font-family: var(--fuenteContenidos);
-    text-align: center;
+    text-align: left;
     margin: 0;
-    padding: 1.5rem; /* Padding uniforme */
-    background-color: transparent; /* El fondo ahora lo da el padre */
+    padding: 1.5rem;
+    /* Padding uniforme */
+    background-color: transparent;
+    /* El fondo ahora lo da el padre */
 }
+
 @media (min-width: 768px) {
     .crecimiento_txt {
         font-size: small;
@@ -189,11 +197,13 @@ hr {
     position: relative;
     margin: 0 auto;
     transition: transform 0.3s ease;
-    
+
     display: flex;
     flex-direction: column;
-    background-color: #FCFC9A; /* FONTO AMARILLO SIEMPRE COMPLETO */
-    overflow: hidden; /* Mantiene el diseño dentro de los bordes redondeados */
+    background-color: #FCFC9A;
+    /* FONTO AMARILLO SIEMPRE COMPLETO */
+    overflow: hidden;
+    /* Mantiene el diseño dentro de los bordes redondeados */
 }
 
 .crecimiento_c1:hover,

@@ -89,17 +89,19 @@
 }
 
 .contenedor__meme {
+    position: relative;
     width: 100%;
     max-width: 250px; 
     height: 250px;
     margin: 0 auto; 
     border: 0.3rem solid black;
     border-radius: 1rem;
-    overflow: visible; 
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0; 
+    cursor: pointer;
 }
 .meme1 {
     grid-column: 1/3;
@@ -138,16 +140,41 @@
     width: 100%;
     height: 100%;
     border-radius: 0.7rem;
-    transition: transform 0.4s ease, z-index 0s;
+    transition: transform 0.4s ease, filter 0.4s ease;
     position: relative;
     z-index: 1;
     object-fit: cover;
 }
 
 .contenedor__meme:hover .meme_img {
-    transform: scale(1.1); 
-    z-index: 999;          
+    transform: scale(1.05);
+    filter: blur(4px) brightness(0.85);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.meme_overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 0.8rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 80%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor__meme:hover .meme_overlay {
+    opacity: 1;
 }
 
 .texto__caja--humor {
@@ -178,4 +205,55 @@
         grid-row: 4/4;
 
     }
+}
+
+/* VISOR MODAL DE MEMES */
+.meme_img {
+    cursor: pointer;
+}
+
+.modal-meme {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-meme.activo {
+    display: flex;
+}
+
+.modal-meme__img {
+    max-width: 95%;
+    max-height: 94vh;
+    border-radius: 1rem;
+    border: 0.3rem solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    object-fit: contain;
+    cursor: default;
+}
+
+.modal-meme__cerrar {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-meme__cerrar:hover {
+    color: #e0e0e0;
+    transform: scale(1.1);
 }

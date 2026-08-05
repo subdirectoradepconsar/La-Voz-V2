@@ -24,3 +24,51 @@ navLinks.forEach(link => {
         navMenu.classList.remove('navegacion--active');
     });
 });
+
+// Modal para ver memes en grande (sección Humor)
+const modalMeme = document.getElementById('modal-meme');
+const modalImg = document.getElementById('modal-img');
+const modalCerrar = document.getElementById('modal-cerrar');
+const memeImgs = document.querySelectorAll('.meme_img');
+
+if (modalMeme && modalImg && memeImgs.length > 0) {
+    const abrirModal = (src, alt) => {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Meme ampliado';
+        modalMeme.classList.add('activo');
+        modalMeme.setAttribute('aria-hidden', 'false');
+    };
+
+    const cerrarModal = () => {
+        modalMeme.classList.remove('activo');
+        modalMeme.setAttribute('aria-hidden', 'true');
+    };
+
+    memeImgs.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            abrirModal(img.src, img.alt);
+        });
+    });
+
+    if (modalCerrar) {
+        modalCerrar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cerrarModal();
+        });
+    }
+
+    modalMeme.addEventListener('click', (e) => {
+        if (e.target !== modalImg) {
+            cerrarModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+            if (modalMeme.classList.contains('activo')) {
+                cerrarModal();
+            }
+        }
+    });
+}

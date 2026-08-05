@@ -99,12 +99,15 @@
                 <div class="contenedor__meme meme1">
                     <img class="meme_img" src="img/humor/ME1.jpg"
                         alt="meme mi amiga la math girl ignorando su afore">
+                    <span class="meme_overlay">Clic aquí para hacerlo más grande</span>
                 </div>
                 <div class="contenedor__meme meme2">
                     <img class="meme_img" src="img/humor/ME2.jpg" alt="meme mientras tu descansabas">
+                    <span class="meme_overlay">Clic aquí para hacerlo más grande</span>
                 </div>
                 <div class="contenedor__meme meme3">
                     <img class="meme_img" src="img/humor/ME3.jpg" alt="meme el colchon no hace crecer tu lana ...">
+                    <span class="meme_overlay">Clic aquí para hacerlo más grande</span>
                 </div>
             </div>
         </section>
@@ -122,6 +125,12 @@
             </a>
         </div>
     </footer>
+    <!-- Visor Modal Meme -->
+    <div class="modal-meme" id="modal-meme" aria-hidden="true">
+        <span class="modal-meme__cerrar" id="modal-cerrar" title="Cerrar">&times;</span>
+        <img class="modal-meme__img" id="modal-img" src="" alt="Meme ampliado">
+    </div>
+
     <script src="js/logica.js"></script>
 </body>
 </html>
