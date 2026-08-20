@@ -1,0 +1,607 @@
+/* ==========================================================================
+   PORTADA / INDEX - LA VOZ CONSAR
+   Estilos institucionales limpios, modernos y responsivos
+   Header en Azul Marino Corporativo para resaltar el logo y redes sociales blancos
+   ========================================================================== */
+
+:root {
+    /* Paleta Institucional */
+    --color-fondo-body: #f1f5f9;       /* Gris azulado muy suave y limpio */
+    --color-tarjeta-bg: #ffffff;       /* Blanco puro para el contenedor Hero */
+    --color-navy: #0b2341;             /* Azul marino institucional profundo */
+    --color-navy-dark: #061528;        /* Azul marino oscuro para contrastes */
+    --color-navy-light: #163a66;       /* Azul marino medio */
+    --color-azul-acento: #0070d2;      /* Azul acento interactivo */
+    --color-azul-hover: #38bdf8;       /* Celeste claro para hover en header */
+    --color-blanco: #ffffff;           /* Blanco */
+    --color-texto: #1e293b;            /* Texto oscuro legible */
+    --color-texto-muted: #64748b;      /* Texto secundario */
+    --color-borde: #e2e8f0;            /* Borde sutil de tarjeta */
+    
+    /* Tipografías */
+    --fuente-primaria: "Montserrat", sans-serif;
+    --fuente-titulos: "Audiowide", cursive, sans-serif;
+    --fuente-texto: "Noto Sans", sans-serif;
+
+    /* Sombras y Radios */
+    --sombra-tarjeta: 0 15px 35px -5px rgba(11, 35, 65, 0.08), 0 5px 15px -3px rgba(11, 35, 65, 0.04);
+    --sombra-header: 0 4px 20px rgba(6, 21, 40, 0.15);
+    --radio-tarjeta: 24px;
+    --radio-boton: 50px;
+}
+
+/* ==========================================================================
+   RESET Y GLOBALES
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo-body);
+    font-family: var(--fuente-primaria);
+    color: var(--color-texto);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   HEADER Y TOP BAR (Azul Marino Corporativo)
+   ========================================================================== */
+.header {
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra-header);
+    width: 100%;
+}
+
+.header__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Redes Sociales en la esquina superior derecha (Iconos Blancos) */
+.header__topbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    z-index: 10;
+}
+
+.iconsLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.iconsLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+    opacity: 0.9;
+}
+
+.iconsLinks a:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+.iconsLinks .icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Logo Central "LA VOZ" (Blanco) */
+.header__branding {
+    margin: 0.5rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header__logo:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
+}
+
+.header__logo--img {
+    width: 28rem;
+    max-width: 90vw;
+    height: auto;
+}
+
+/* Botón Hamburguesa Móvil */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.8rem;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 1.8rem;
+    left: 1.8rem;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-blanco);
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* Barra de Navegación */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navegacion__enlace {
+    font-family: var(--fuente-primaria);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding: 0.6rem 0.4rem;
+    transition: color 0.25s ease;
+}
+
+.navegacion__enlace::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-azul-hover);
+    transition: width 0.25s ease, left 0.25s ease;
+    border-radius: 2px;
+}
+
+.navegacion__enlace:hover {
+    color: var(--color-azul-hover);
+}
+
+.navegacion__enlace:hover::after,
+.navegacion__enlace--activo::after {
+    width: 100%;
+    left: 0;
+}
+
+/* ==========================================================================
+   SECCIÓN HERO / PRINCIPAL
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.seccion__inicio {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tarjeta Hero Sólida */
+.grid__caja--inicio {
+    background-color: var(--color-tarjeta-bg);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra-tarjeta);
+    width: 100%;
+    padding: 4.5rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Columna Izquierda: Mascota */
+.hero__col--left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.puerquito {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+    object-fit: contain;
+    animation: aparecerMascota 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+               flotarMascota 4s ease-in-out infinite 0.8s;
+}
+
+@keyframes aparecerMascota {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flotarMascota {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Columna Central: Título y Cumpleaños */
+.hero__col--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.contenedor__mes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto__caja--auto {
+    display: inline-block;
+    background-color: var(--color-navy);
+    color: var(--color-blanco);
+    font-family: var(--fuente-primaria);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 0.4rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    box-shadow: 0 4px 12px rgba(11, 35, 65, 0.15);
+}
+
+.titulo_mes {
+    font-family: var(--fuente-titulos);
+    font-size: clamp(4.5rem, 7vw, 8.5rem);
+    color: var(--color-navy);
+    line-height: 1.05;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Botón Interactivo de Cumpleaños */
+.boton__puntero {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.botonCumpleaños__boton {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1.3rem 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: var(--fuente-primaria);
+    letter-spacing: 1px;
+    color: var(--color-blanco);
+    background: linear-gradient(135deg, #0b2341 0%, #1a4980 100%);
+    border: none;
+    border-radius: var(--radio-boton);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(11, 35, 65, 0.25);
+    transition: all 0.3s ease;
+}
+
+.botonCumpleaños__boton:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(11, 35, 65, 0.35);
+    background: linear-gradient(135deg, #005bb5 0%, #0088ff 100%);
+}
+
+.botonCumpleaños__boton:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.puntero {
+    width: 3.5rem;
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+    animation: moverPuntero 2s ease-in-out infinite;
+}
+
+@keyframes moverPuntero {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(5px, 5px);
+    }
+}
+
+/* Columna Derecha: Elemento Gráfico */
+.hero__col--right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imagen_temporada {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    object-fit: contain;
+    animation: aparecerGrafico 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes aparecerGrafico {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   FOOTER INSTITUCIONAL
+   ========================================================================== */
+.footer {
+    background-color: var(--color-navy);
+    color: var(--color-blanco);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.correo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__texto,
+.footer__texto2 {
+    font-family: var(--fuente-primaria);
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.footer__texto {
+    font-weight: 600;
+}
+
+.enlace-svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.enlace-svg:hover {
+    transform: scale(1.15);
+}
+
+.icon--sobre {
+    width: 3.2rem;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD (TABLETS Y MÓVILES)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .navegacion {
+        gap: 2rem;
+    }
+
+    .grid__caja--inicio {
+        padding: 3.5rem 2.5rem;
+        gap: 2rem;
+    }
+    
+    .titulo_mes {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__container {
+        padding: 1.2rem 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header__topbar {
+        position: static;
+        width: auto;
+        margin-left: auto;
+    }
+
+    .iconsLinks {
+        gap: 0.8rem;
+    }
+
+    .iconsLinks a {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .iconsLinks .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .header__branding {
+        margin: 0;
+    }
+
+    .header__logo--img {
+        width: 18rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Menú Móvil Desplegable */
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-navy);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+        z-index: 100;
+    }
+
+    .navegacion--active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 400px;
+        padding: 2rem 0;
+    }
+
+    .navegacion__enlace {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .navegacion__enlace::after {
+        display: none;
+    }
+
+    .navegacion__enlace:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Tarjeta Hero en Móvil */
+    .grid__caja--inicio {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 2rem;
+    }
+
+    .hero__col--left {
+        order: 2;
+    }
+
+    .hero__col--center {
+        order: 1;
+    }
+
+    .hero__col--right {
+        order: 3;
+    }
+
+    .puerquito,
+    .imagen_temporada {
+        max-width: 20rem;
+    }
+
+    .titulo_mes {
+        font-size: 5rem;
+    }
+
+    .correo {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}

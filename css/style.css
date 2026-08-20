@@ -63,65 +63,124 @@ img {
     max-width: 100%;
 }
 
-/** ---------------- Header  ---------------- **/
+/** ---------------- Header Institucional ---------------- **/
+:root {
+    --color-navy: #0b2341;
+    --color-navy-dark: #061528;
+    --color-azul-acento: #0070d2;
+    --color-azul-hover: #38bdf8;
+    --sombra-header: 0 4px 20px rgba(6, 21, 40, 0.15);
+}
 
 .header {
+    background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%) !important;
     position: sticky;
-    /* Se queda pegado al hacer scroll */
     top: 0;
-    /* Define dónde se debe pegar (en el borde superior) */
     z-index: 1000;
-    /* Muy importante para que pase por encima del contenido */
-    background-color: var(--primario);
-    /* Fondo sólido para que no sea transparente */
-
-    display: flex;
-    justify-content: center;
+    box-shadow: var(--sombra-header);
+    width: 100%;
+    display: block;
     padding: 0;
 }
 
 @media (min-width: 768px) {
     .header {
-        position: static;
+        position: sticky;
         width: 100%;
-        display: flex;
-        justify-content: center;
+        display: block;
         padding: 0;
-        flex-direction: column;
-        /* Alinea Logo arriba y Nav abajo */
-        align-items: stretch;
-        /* Centra el logo y el nav horizontalmente */
-        background-color: var(--primario);
+        background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%) !important;
     }
 }
 
+.header__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Redes Sociales en la esquina superior derecha */
+.header__topbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    z-index: 10;
+}
+
+.iconsLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.iconsLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+    opacity: 0.9;
+}
+
+.iconsLinks a:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+.iconsLinks .icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Logo Central */
+.header__branding {
+    margin: 0.5rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header__logo {
-    width: 30rem;
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    width: auto;
+    margin: 0;
+}
+
+.header__logo:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
+}
+
+.header__logo--img {
+    width: 28rem;
+    max-width: 90vw;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
     .header__logo {
-        /* ESTO LO CENTRA HORIZONTALMENTE */
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 0;
     }
-}
-
-.header__logo--img {
-    width: 15rem;
-    display: block;
-    margin: 2rem auto;
-}
-
-@media (min-width: 768px) {
     .header__logo--img {
-        width: 100%;
-        display: block;
-        margin: 2rem;
+        width: 28rem;
+        margin: 0 auto;
     }
 }
 
@@ -163,152 +222,180 @@ img {
     font-weight: bold;
 }
 
-/* ---------------- Navegación ---------------- */
-.navegacion {
-    background-color: var(--blanco);
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    gap: 5rem;
-    transition: max-height 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-    .navegacion {
-        width: 100%;
-        display: grid;
-        gap: 2rem;
-        flex-direction: column;
-        align-items: center;
-        text-align: justify;
-    }
-}
-
-.navegacion__enlace {
-    font-family: var(--fuentePrimaria);
-    color: var(--negro);
-    gap: 2rem;
-    text-transform: uppercase;
-    margin: 0rem auto;
-}
-
-.navegacion__enlace--activo,
-.navegacion__enlace:hover {
-    color: var(--primario);
-    font-weight: bold;
-}
-
-.gif {
-    display: flex;
-    width: 4rem;
-    justify-self: center;
-}
-
-.navegacion__enlace--gif {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-}
-
-.iconsLinks {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10%;
-    gap: 1rem;
-    padding: 3rem 0 0 0;
-}
-
-.icon {
-    width: 3rem;
-}
-
-/* HAMBURGUEZA */
-/* --- Estilos para el botón (Oculto por defecto en desktop) --- */
+/* ---------------- Navegación Institucional ---------------- */
 .hamburger {
     display: none;
     cursor: pointer;
     background: none;
     border: none;
+    padding: 0.8rem;
     flex-direction: column;
     gap: 5px;
+    position: absolute;
+    top: 1.8rem;
+    left: 1.8rem;
+    z-index: 1100;
 }
 
 .hamburger span {
     display: block;
-    width: 30px;
-    height: 4px;
-    background-color: var(--negro);
+    width: 26px;
+    height: 3px;
+    background-color: #ffffff;
     border-radius: 2px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-/* --- Tu navegación base (Desktop) --- */
 .navegacion {
-    background-color: var(--blanco);
-    padding: 1rem 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 3.5rem;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: transparent;
     transition: max-height 0.3s ease-in-out;
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrimaria);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding: 0.6rem 0.4rem;
+    transition: color 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navegacion__enlace::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-azul-hover, #38bdf8);
+    transition: width 0.25s ease, left 0.25s ease;
+    border-radius: 2px;
+}
+
+.navegacion__enlace:hover {
+    color: var(--color-azul-hover, #38bdf8);
+}
+
+.navegacion__enlace:hover::after,
+.navegacion__enlace--activo::after {
+    width: 100%;
+    left: 0;
+}
+
+.navegacion__enlace--activo {
+    color: var(--color-azul-hover, #38bdf8);
+    font-weight: 700;
+}
+
+.gif {
+    display: inline-block;
+    width: 2.8rem;
+    height: auto;
+    vertical-align: middle;
+}
+
+.navegacion__enlace--gif {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
 }
 
 /* --- Ajustes para Móvil (768px o menos) --- */
 @media (max-width: 768px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: var(--primario);
+    .header__container {
+        padding: 1.2rem 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header__topbar {
+        position: static;
+        width: auto;
+        margin-left: auto;
+    }
+
+    .iconsLinks {
+        gap: 0.8rem;
+    }
+
+    .iconsLinks a {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .iconsLinks .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .header__branding {
+        margin: 0;
+    }
+
+    .header__logo--img {
+        width: 18rem;
     }
 
     .hamburger {
         display: flex;
-        /* Aparece en móvil */
     }
 
     .navegacion {
-        /* display: none; */
         display: flex;
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-        overflow: hidden;
-
-        /* Se oculta por defecto */
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         position: absolute;
-        top: 70px;
-        /* Ajusta según el alto de tu header */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--blanco);
+        background-color: var(--color-navy, #0b2341);
         padding: 0;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
         z-index: 100;
-
-        transition: max-height 0.5s ease-in-out, opacity 0.3s ease, padding 0.5s ease;
-        border-radius: 0 0 2rem 2rem;
     }
 
-    /* Clase que activaremos con JS */
     .navegacion--active {
         opacity: 1;
         visibility: visible;
-        max-height: 500px;
+        max-height: 450px;
         padding: 2rem 0;
     }
-    /* Redondeado del último enlace para que coincida con el contenedor */
-    .navegacion__enlace:last-child {
-        border-radius: 0 0 2rem 2rem;
+
+    .navegacion__enlace {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .navegacion__enlace::after {
+        display: none;
+    }
+
+    .navegacion__enlace:hover {
+        background-color: rgba(255, 255, 255, 0.08);
     }
 }
-
-/* HAMBURGUEZA FIN */
 
 /* ----------------- Paguina de INICIO ----------------- */
 .seccion__inicio {

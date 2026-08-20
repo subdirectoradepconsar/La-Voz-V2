@@ -1,294 +1,165 @@
-/* ----------------- PÁGINA DE ACCIÓN (ESTILOS BASE / MÓVIL) ----------------- */
-.header {
-    background-color: var(--primarioAccion);
-}
+/* ========================================================================
+   ACCIÓN — ARTÍCULO EDITORIAL INSTITUCIONAL
+   ======================================================================== */
 .page-accion {
-    background-color: var(--primarioAccion);
-    font-size: 1.6rem;
-    line-height: 1.5;
-}
-
-.seccion__accion {
+    --action-wine: #3e0e15;
+    --action-wine-dark: #28080d;
+    --action-wine-soft: #4a121a;
+    --action-champagne: #e8c98b;
+    --action-text: rgba(255, 255, 255, 0.9);
+    --fuente-primaria: "Plus Jakarta Sans", sans-serif;
+    --fuente-titulos: "Plus Jakarta Sans", sans-serif;
+    --fuente-texto: "Plus Jakarta Sans", sans-serif;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    padding: 0 0 3rem 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(232, 201, 139, 0.09), transparent 31rem),
+        radial-gradient(circle at 88% 48%, rgba(120, 30, 43, 0.24), transparent 35rem),
+        linear-gradient(145deg, var(--action-wine), var(--action-wine-dark));
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Contenedor Padre: Aquí empezarás a definir tu grid de 1 o 2 columnas para móvil */
-.grid__caja--accion {
-    border: 0.1rem solid black;
-    box-shadow: inset 0 0 0 0.2rem black;
-    position: relative;
-    display: grid;
-    /* Limpio: Listo para que definas tu estructura móvil */
-    align-items: center;
-    width: 90%;
-    background-color: var(--blanco);
-    padding: 1rem;
-    border-radius: 1rem;
-    gap: 0.8rem;
-
-    background-image: url(../img/mesa.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.page-accion .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex: 0 0 auto;
+    background: rgba(40, 8, 13, 0.92) !important;
+    border-bottom: 1px solid rgba(232, 201, 139, 0.2);
+    box-shadow: 0 7px 24px rgba(12, 2, 4, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
-@media (min-width: 768px) {
-    .grid__caja--accion {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.page-accion .header__container { padding: .7rem 2.5rem .3rem; }
+.page-accion .header__topbar { top: .8rem; }
+.page-accion .header__branding { margin: .2rem 0 .65rem; }
+.page-accion .header__logo--img { width: clamp(21rem, 21vw, 24rem); }
+.page-accion .iconsLinks { gap: 1rem; }
+.page-accion .iconsLinks a { width: 3rem; height: 3rem; background: rgba(255,255,255,.08); }
+.page-accion .iconsLinks .icon { width: 1.8rem; height: 1.8rem; }
+.page-accion .navegacion { gap: clamp(2rem,3vw,3.5rem); padding: .65rem 0; border-top-color: rgba(255,255,255,.1); }
+.page-accion .navegacion__enlace { font-family: "Plus Jakarta Sans", sans-serif; font-size: 1.3rem; font-weight: 600; letter-spacing: .5px; }
+.page-accion .navegacion__enlace::after { background: var(--action-champagne); }
+.page-accion .navegacion__enlace:hover, .page-accion .navegacion__enlace--activo { color: #ffe7b7; }
+.page-accion .navegacion__enlace--activo { padding-inline: .9rem; background: rgba(232,201,139,.1); border-radius: 999px; }
+
+.action-main { flex: 1; width: 100%; padding: clamp(2rem,4vw,5rem) clamp(1.5rem,3vw,3.5rem); }
+.action-article {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: clamp(2.2rem,4vw,4.8rem);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-.titulo__accion {
-    /* 1. Aseguramos que el texto se centre en el eje horizontal */
-    text-align: center; 
-    /* 2. Si usas Flex, necesitas esto para centrar el contenido X y Y */
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    /* 3. Para que justify-self funcione, el padre debe ser un Grid */
-    justify-self: center; 
-    width: 100%; /* Asegura que ocupe todo el ancho para que el centro sea el centro real */
-    font-family: var(--fuenteSecundaria);
+.action-article__header { max-width: 88rem; margin: 0 auto clamp(3rem,5vw,5rem); text-align: center; }
+.action-kicker { margin: 0 0 1rem; color: var(--action-champagne); font-size: 1.2rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.action-article h1 {
     margin: 0;
-    font-size: 3.5rem;
-    grid-row: 1/2;
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: max(2.2rem, 32px);
+    font-weight: 800;
+    letter-spacing: -.035em;
+    line-height: 1.18;
+    text-wrap: balance;
 }
-
-
-@media (min-width: 768px) {
-    .titulo__accion {
-        grid-column: 2/4;
-        font-size: 5rem;
-        /* Aquí ya lo tenías bien, pero ahora será consistente con el móvil */
-        text-align: start;
-        justify-content: center;
-    }
-}
-
-.texto__caja--accion {
+.action-deck {
     display: inline-flex;
-    padding: 0 1rem;
-    font-family: var(--fuentePrimaria);
-    background-color: var(--negro);
-    color: var(--blanco);
-    border-radius: 1rem;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 2rem;
-}
-@media (min-width: 768px) {
-    .texto__caja--accion {
-        text-align: center;
-        font-size: 2.5rem;
-        width: 100%;
-        padding: 1rem;
-    }
+    margin: 1.8rem auto 0;
+    padding: .8rem 1.7rem;
+    color: #fff7e7;
+    background: rgba(232,201,139,.08);
+    border: 1px solid rgba(232,201,139,.65);
+    border-radius: 999px;
+    box-shadow: 0 5px 16px rgba(0,0,0,.14);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .02em;
 }
 
-
-.accion__txt1, .accion__txt2 {
-    width: 100%;
-    height: 95%;
-    display: grid;
-    gap: 1rem;
-    border-radius: 1rem;
-    border: 0.3rem solid black;
-    /* Efecto de color intacto */
-    background: linear-gradient(to top, #a00505 50%, blue 50%);
-    background-size: 100% 200%;
-    background-position: top;
-    transition: background-position 0.5s ease;
-    color: white;
-    justify-self: center;
-    padding: 0rem 1rem;
+.action-layout { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(25rem,.75fr); gap: clamp(3rem,5vw,6rem); align-items: start; }
+.action-copy { min-width: 0; }
+.action-copy p {
+    margin: 0;
+    color: var(--action-text);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: max(1.05rem, 16px);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
 }
-@media (min-width: 768px) {
-    .accion__txt2 {
-       /*  grid-row: 2/3;
-        grid-column: 2/3; */
-    }
-}
+.action-copy p + p { margin-top: 2rem; }
+.action-copy p:first-child::first-letter { float: left; margin: .2rem .7rem 0 0; color: var(--action-champagne); font-size: 4.6rem; font-weight: 800; line-height: .8; }
 
-.accion__txt1:hover, .accion__txt2:hover {
-    background-position: bottom;
-}
-
-
-.texto-accion {
-    color: var(--blanco);
-    font-family: var(--fuenteContenidos);
-    padding: 0.5rem;
-    font-size: 1.5rem;
-}
-@media (min-width: 768px) {
-    .div_titulo {
-        grid-column: 1/4;
-    }
-    .div_subtitulo {
-        grid-column: 1/4;
-        grid-row: 2/3;
-    }
-    .texto-accion {
-        font-size: 2rem;
-    }
-}
-
-.accion__img {
-    width: 85%;
-    display: grid;
-    /* Limpio: Sin grid-column */
-}
-
-.negritas {
-    font-weight: bold;
-}
-
-.directivos__img {
-    justify-self: center;
-    width: 60%;
+.action-aside {
+    position: sticky;
+    top: 14rem;
     display: flex;
-    /* Animación intacta */
-    animation: 
-        aparecer 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
-        flotar 3s ease-in-out infinite 0.8s;
-}
-
-/* --- ANIMACIONES (SE QUEDAN IGUAL) --- */
-@keyframes aparecer {
-    0% { transform: translateX(50px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* --- COMPONENTE MARCO (SE QUEDA IGUAL YA QUE ES UN COMPONENTE INDEPENDIENTE) --- */
-.marco {
-  width: 100%;
-  max-width: 500px;
-  margin: 1rem auto;
-  background-color: rgb(250, 250, 250);
-  border: 0.2rem solid var(--negro);
-  border-radius: 2.5rem;
-  padding: 1.9rem;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.controles-superiores {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.4rem ;
-  margin-bottom: 1rem;
-}
-
-.punto {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-}
-.rojo { background-color: #ff5f56; }
-.amarillo { background-color: #ffbd2e; }
-.verde { background-color: #27c93f; }
-
-.contenedor-imagen {
-  width:100%;
-  background-color: #f0f0f0;
-  border: 2px solid #1a1a1a;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.contenedor-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.interaccion-inferior {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  padding: 0 10px;
-}
-
-.iconos-izquierda {
-  display: flex;
-  gap: 20px;
-  font-size: 1.5rem;
-}
-
-.icono {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.icono:hover { transform: scale(1.2); }
-
-.paginacion {
-  display: flex;
-  gap: 6px;
-}
-
-.p-punto {
-  width: 8px;
-  height: 8px;
-  background-color: #e0e0e0;
-  border-radius: 50%;
-}
-
-.p-punto.activo { background-color: #0095f6; }
-
-.icono-guardar { font-size: 1.5rem; }
-
-
-/* Boton que nos lleva al forms */
-.contenedor_boton {
-    display: flex;
-    justify-content: center; /* Centra el botón en la página */
-    width: 100%;
-    padding: 5rem;
-}
-@media (min-width: 768px) {
-    .contenedor_boton {
-    width: 100%;
-    height: 70%;
-    padding: 2rem;
-    }
-}
-
-.boton_forms {
-    
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-width: fit-content;
-    max-width: 90%;
-    padding: 14px 32px;
-    text-align: center;
-    word-break: break-word;
+    padding: 2rem;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.11);
+    border-radius: 20px;
+}
+.action-visual { display: block; width: min(100%,27rem); border-radius: 20px; transition: transform .25s ease, filter .25s ease; }
+.action-visual:hover { transform: translateY(-3px); filter: brightness(1.03); }
+.action-visual img { display: block; width: 100%; height: auto; border-radius: 18px; filter: drop-shadow(0 16px 22px rgba(0,0,0,.28)); }
+.action-aside__caption { margin: 1.8rem 0; color: rgba(255,255,255,.7); font-size: 1.25rem; line-height: 1.55; text-align: center; }
+.action-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .9rem;
+    width: 100%;
+    min-height: 4.6rem;
+    padding: 1rem 1.8rem;
+    color: #351015;
+    background: var(--action-champagne);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.22);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: .04em;
     text-transform: uppercase;
-    font-size: 18px;
-    font-family: var(--fuentePrimaria);
-    color: #fff;
-    background: #c022b5;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(255, 111, 145, 0.45);
-    transition: transform 0.2s ease;
-    animation: coloresVivos 6s infinite alternate;
+    transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
 }
+.action-cta span { font-size: 1.8rem; transition: transform .22s ease; }
+.action-cta:hover { transform: translateY(-2px); background: #f5dba7; box-shadow: 0 12px 26px rgba(0,0,0,.28); }
+.action-cta:hover span { transform: translateX(3px); }
+.action-cta:focus-visible, .action-visual:focus-visible { outline: 3px solid rgba(232,201,139,.65); outline-offset: 4px; }
 
+.page-accion .footer { flex: 0 0 auto; margin-top: auto; background: rgba(40,8,13,.94); border-top: 1px solid rgba(232,201,139,.16); }
+.page-accion .correo { padding: 1.25rem 2rem; }
+.page-accion .footer__texto, .page-accion .footer__texto2 { color: rgba(255,255,255,.82); font-family: "Plus Jakarta Sans", sans-serif; font-size: 1.2rem; }
+.page-accion .icon--sobre { width: 2.7rem; filter: brightness(0) invert(1); }
 
-.boton_forms:hover {
-    transform: scale(1.15);
+@media (max-width: 900px) {
+    .action-layout { grid-template-columns: 1fr; }
+    .action-aside { position: static; width: min(100%,48rem); margin: 0 auto; }
 }
-
-
+@media (max-width: 767px) {
+    .page-accion .header__container { flex-direction: column; }
+    .page-accion .header__branding { order: 1; }
+    .page-accion .header__topbar { position: static; order: 2; justify-content: center; width: 100%; margin: .8rem 0 0; }
+    .page-accion .navegacion { order: 3; background: var(--action-wine-dark); }
+    .action-main { padding: 1.5rem 1rem 2.5rem; }
+    .action-article { padding: 2.5rem 1.7rem; border-radius: 18px; }
+    .action-article__header { text-align: left; }
+    .action-deck { text-align: left; }
+    .action-copy p:first-child::first-letter { float: none; margin: 0; font-size: inherit; font-weight: inherit; }
+    .page-accion .correo { flex-direction: column; gap: .8rem; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .action-visual, .action-cta, .action-cta span { transition: none; }
+}

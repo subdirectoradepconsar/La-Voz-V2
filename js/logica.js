@@ -25,50 +25,59 @@ navLinks.forEach(link => {
     });
 });
 
-// Modal para ver memes en grande (sección Humor)
+// Feed interactivo de memes: likes y visor ampliado.
 const modalMeme = document.getElementById('modal-meme');
 const modalImg = document.getElementById('modal-img');
 const modalCerrar = document.getElementById('modal-cerrar');
-const memeImgs = document.querySelectorAll('.meme_img');
+const memeCards = document.querySelectorAll('.meme-card');
+let ultimoControlMeme = null;
 
-if (modalMeme && modalImg && memeImgs.length > 0) {
-    const abrirModal = (src, alt) => {
-        modalImg.src = src;
-        modalImg.alt = alt || 'Meme ampliado';
+if (modalMeme && modalImg && modalCerrar && memeCards.length > 0) {
+    const abrirModal = (card, control) => {
+        const img = card.querySelector('.meme_img');
+        if (!img) return;
+
+        ultimoControlMeme = control;
+        modalImg.src = img.currentSrc || img.src;
+        modalImg.alt = img.alt || 'Meme ampliado';
         modalMeme.classList.add('activo');
         modalMeme.setAttribute('aria-hidden', 'false');
+        modalCerrar.focus();
     };
 
     const cerrarModal = () => {
         modalMeme.classList.remove('activo');
         modalMeme.setAttribute('aria-hidden', 'true');
+        if (ultimoControlMeme) ultimoControlMeme.focus();
     };
 
-    memeImgs.forEach(img => {
-        img.addEventListener('click', (e) => {
-            e.stopPropagation();
-            abrirModal(img.src, img.alt);
-        });
-    });
+    memeCards.forEach(card => {
+        const imageButton = card.querySelector('.contenedor__meme');
+        const zoomButton = card.querySelector('.meme-zoom');
+        const likeButton = card.querySelector('.meme-like');
+        const likeCount = card.querySelector('.meme-like__count');
 
-    if (modalCerrar) {
-        modalCerrar.addEventListener('click', (e) => {
-            e.stopPropagation();
-            cerrarModal();
+        [imageButton, zoomButton].forEach(control => {
+            if (control) control.addEventListener('click', () => abrirModal(card, control));
         });
-    }
 
-    modalMeme.addEventListener('click', (e) => {
-        if (e.target !== modalImg) {
-            cerrarModal();
+        if (likeButton && likeCount) {
+            const initialCount = Number.parseInt(likeCount.textContent, 10) || 0;
+            likeButton.addEventListener('click', () => {
+                const liked = likeButton.getAttribute('aria-pressed') !== 'true';
+                likeButton.setAttribute('aria-pressed', String(liked));
+                likeButton.setAttribute('aria-label', liked ? 'Quitar Me gusta' : 'Me gusta');
+                likeCount.textContent = String(initialCount + (liked ? 1 : 0));
+            });
         }
     });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-            if (modalMeme.classList.contains('activo')) {
-                cerrarModal();
-            }
-        }
+    modalCerrar.addEventListener('click', cerrarModal);
+    modalMeme.addEventListener('click', (event) => {
+        if (event.target === modalMeme) cerrarModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modalMeme.classList.contains('activo')) cerrarModal();
     });
 }

@@ -1,165 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C08WHWTTN7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-C08WHWTTN7');
-    </script> <!-- Google tag (gtag.js) -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Voz | CRECIMIENTO</title>
-    <link rel="icon" href="img/favicon_la_voz.webp" type="image/webp">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/portada.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Monsieur+La+Doulaise&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/crecimiento.css">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Voz | CRECIMIENTO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
+    body {
+      background-color: #1a120b;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    header {
+      flex-shrink: 0;
+      padding: 14px 40px 10px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .social-icons {
+      position: absolute;
+      right: 40px;
+      top: 18px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+
+    .header__branding {
+      margin: 2px 0 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header__logo {
+      display: inline-block;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .header__logo:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
+    }
+
+    .header__logo--img {
+      width: clamp(210px, 21vw, 240px);
+      max-width: 90vw;
+      height: auto;
+      display: block;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffffff;
+      border-bottom: 2px solid #e5a93c;
+    }
+
+    /* CONTENEDOR CENTRAL GLASS */
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 40px;
+      max-height: calc(100vh - 170px);
+      min-height: 0;
+    }
+
+    .glass-card {
+      width: 100%;
+      max-width: 1280px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 24px 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .crecimiento-layout {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 30px;
+      height: 100%;
+      max-height: calc(100vh - 200px);
+      align-items: start;
+      min-height: 0;
+    }
+
+    /* COLUMNA IZQUIERDA (HERO / INTRO) */
+    .crecimiento-sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      min-height: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding-right: 24px;
+    }
+
+    .crecimiento-sidebar h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: rgba(229, 169, 60, 0.15);
+      border: 1px solid rgba(229, 169, 60, 0.4);
+      color: #E5A93C;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .intro-text {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 12px;
+    }
+
+    .character-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 10px;
+      max-height: 150px;
+      overflow: hidden;
+    }
+
+    .character-img {
+      max-height: 130px;
+      width: auto;
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    /* COLUMNA DERECHA (TARJETAS DE VALORES) */
+    .crecimiento-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .crecimiento-cards-container::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .crecimiento-cards-container::-webkit-scrollbar-thumb {
+      background: rgba(229, 169, 60, 0.42);
+      border-radius: 4px;
+    }
+
+    .pillar-card {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 18px 20px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(229, 169, 60, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .pillar-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #E5A93C;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .pillar-card p,
+    .pillar-list li {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .pillar-list {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+    }
+
+    .pillar-list li {
+      margin-bottom: 6px;
+    }
+
+    .pillar-list li::marker {
+      color: #E5A93C;
+    }
+
+    .pillar-card strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+      }
+
+      .main-wrapper {
+        max-height: none;
+        padding: 20px;
+      }
+
+      .glass-card {
+        height: auto;
+        padding: 22px;
+        overflow: visible;
+      }
+
+      .crecimiento-layout {
+        grid-template-columns: 1fr;
+        max-height: none;
+        height: auto;
+      }
+
+      .crecimiento-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 0 0 24px;
+        gap: 16px;
+      }
+
+      .character-box {
+        max-height: 180px;
+      }
+
+      .crecimiento-cards-container {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding-inline: 16px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .crecimiento-sidebar h1 {
+        font-size: 1.65rem;
+      }
+
+      .pillar-card {
+        padding: 16px;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      flex-shrink: 0;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
+<body>
 
-<body class="page-crecimiento">
-    <header class="header">
-        <a class="header__logo" href="index.html">
-            <img class="header__logo--img" src="img/logo_la_voz.svg" alt="la_voz">
-        </a>
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="navegacion" id="nav-menu">
-            <a class="navegacion__enlace" href="accion.html">acción</a>
-            <a class="navegacion__enlace" href="brujula.html">brújula</a>
-            <a class="navegacion__enlace" href="tiempo_libre.html">tiempo libre</a>
+  <!-- HEADER -->
+  <header>
+    <div class="header__branding">
+      <a class="header__logo" href="index.html" aria-label="Inicio La Voz">
+        <img class="header__logo--img" src="img/logo_la_voz.svg" alt="La Voz">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="accion.html">ACCIÓN</a></li>
+        <li><a href="brujula.html">BRÚJULA</a></li>
+        <li><a href="tiempo_libre.html">TIEMPO LIBRE</a></li>
+        <li><a href="crecimiento.html" class="active">CRECIMIENTO</a></li>
+        <li><a href="humor.html">HUMOR</a></li>
+        <li><a href="conexion.html">CONEXIÓN</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <a class="navegacion__enlace navegacion__enlace--activo navegacion__enlace--gif" href="crecimiento.html">
-                <span>crecimiento</span>
-                <img class="gif" src="img/GIFS/CRECIMIENTO.gif" alt="">
-            </a>
+  <!-- CONTENIDO CENTRAL -->
+  <main class="main-wrapper">
+    <div class="glass-card">
+      <div class="crecimiento-layout">
+        <!-- Columna Izquierda: Encabezado, Intro e Ilustración -->
+        <aside class="crecimiento-sidebar">
+          <div class="header-group">
+            <h1>El servicio público</h1>
+            <span class="badge-pill">Más que una labor técnica, una misión de vida.</span>
+          </div>
 
-            <a class="navegacion__enlace" href="humor.html"> humor</a>
-            <a class="navegacion__enlace" href="conexion.html">conexión</a>
-        </nav>
-    </header>
+          <p class="intro-text">
+            El trabajo que realizamos cada día en nuestras oficinas no debe verse únicamente como el cumplimiento de procedimientos administrativos o la gestión de expedientes. Como integrantes del sector hacendario, cada decisión que tomamos y cada programa que diseñamos tiene un impacto real en la vida de las personas.
+          </p>
 
-    <main>
-        <section class="iconsLinks">
-            <a target="_blank" href="https://www.facebook.com/ConsarMexico/?locale=es_LA">
-                <img class="icon" src="img/icons/facebook.svg" alt="facebook">
-            </a>
-            <a target="_blank" arget="_blank" href="https://x.com/consar_mx?lang=es">
-                <img class="icon" src="img/icons/twitterX.svg" alt="X">
-            </a>
-            <a target="_blank" href="https://www.instagram.com/consar_mx/?hl=es">
-                <img class="icon" src="img/icons/instagram.svg" alt="instagram">
-            </a>
-            <a target="_blank" href="https://www.youtube.com/user/CONSARMexico">
-                <img class="icon" src="img/icons/youtube.svg" alt="youtube">
-            </a>
-            <a target="_blank" href="https://www.linkedin.com/company/consar-mx/posts/?feedView=all">
-                <img class="icon" src="img/icons/linkedin.svg" alt="linkedin">
-            </a>
-            <a target="_blank" href="https://www.tiktok.com/@consar_mx">
-                <img class="icon" src="img/icons/tiktok.svg" alt="tiktok">
-            </a>
+          <div class="character-box">
+            <img src="img/crecimiento/COMPU.png" alt="Personaje CONSAR" class="character-img">
+          </div>
+        </aside>
+
+        <!-- Columna Derecha: Tarjetas de Pilares -->
+        <section class="crecimiento-cards-container" aria-label="Pilares del servicio público">
+          <article class="pillar-card">
+            <div class="pillar-header">LA MÍSTICA DEL SERVICIO PÚBLICO</div>
+            <p class="pillar-intro">La verdadera legitimidad de nuestro poder y autoridad aparece solo cuando los ponemos al servicio de las personas y sus derechos. Servir al interés público significa que nuestra labor tiene cuatro dimensiones inseparables:</p>
+            <ul class="pillar-list">
+              <li><strong>Técnica:</strong> realizar el trabajo con profesionalismo y conocimiento especializado.</li>
+              <li><strong>Ética:</strong> actuar con honestidad, responsabilidad e integridad.</li>
+              <li><strong>Democrática:</strong> reconocer que las instituciones existen para servir a la sociedad.</li>
+              <li><strong>Humana:</strong> recordar siempre que el centro de nuestro trabajo son los seres humanos.</li>
+            </ul>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">¿QUÉ SIGNIFICA SER "PROMOTOR DE LA IGUALDAD"?</div>
+            <p class="pillar-intro">Este concepto, impulsado por la Dra. Marcela Lagarde, implica que no somos solo espectadores de la ley, sino agentes activos que deben garantizar que la igualdad ocurra en la realidad (igualdad sustantiva). La igualdad no se construye solo con discursos; se construye en la forma en que:</p>
+            <ul class="pillar-list">
+              <li>Escuchamos y reconocemos a nuestras y nuestros colegas.</li>
+              <li>Distribuimos las tareas y las oportunidades de desarrollo.</li>
+              <li>Tomamos decisiones basadas en la dignidad humana y no en prejuicios o redes informales.</li>
+            </ul>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">ERRADICAR, NO SOLO DISMINUIR</div>
+            <p>Un mensaje clave de este compromiso es la ambición de nuestras metas. En la administración pública moderna, el objetivo no debe ser simplemente "disminuir" los indicadores de violencia, pobreza o desigualdad: la meta ética y profesional del funcionariado debe ser erradicar estas brechas de raíz.</p>
+            <p style="margin-top: 10px;">Esto exige ser agentes de cambio positivo capaces de cuestionar las prácticas institucionales que, aunque parezcan normales, reproducen desigualdades.</p>
+          </article>
         </section>
+      </div>
 
-        <section class="seccion__crecimiento">
-            <div class="grid__caja--crecimiento">
+    </div>
+  </main>
 
-                <div class="texto__caja">
-                    <p class="texto__caja--crecimiento">Más que una labor técnica, una misión de vida.</p>
-                </div>
+  <!-- FOOTER -->
+  <footer>
+    Todos los derechos reservados Comisión Nacional del Sistema de Ahorro para el Retiro | CONSAR | <a href="#">Te queremos escuchar ✉</a>
+  </footer>
 
-                <div class="titulo_crecimiento">
-                    <p class="titulo_principal">El servicio público</p><br>
-                </div>
-
-                <p class="crecimiento__cuadro--negro">
-                    El trabajo que realizamos cada día en nuestras oficinas no debe verse únicamente como el
-                    cumplimiento de procedimientos administrativos o la gestión de expedientes. Como integrantes del
-                    sector hacendario, cada decisión que tomamos y cada programa que diseñamos tiene un impacto real en
-                    la vida de las personas.
-                </p>
-
-                <div class="img_creativo">
-                    <img class="referencia_img" src="img/crecimiento/COMPU.png">
-                </div>
-
-                <div class="crecimiento_c1">
-                    <p class="subtitulo__crecimiento">La mística del servicio público</p>
-
-                    <p class="crecimiento_txt">
-                        La verdadera legitimidad de nuestro poder y autoridad aparece solo cuando los ponemos al
-                        servicio de las personas y sus derechos. Servir al interés público significa que nuestra labor
-                        tiene cuatro dimensiones inseparables:
-
-                        <br> <br> • <strong>Técnica:</strong> realizar el trabajo con profesionalismo y conocimiento
-                        especializado.<br>
-                        • <strong>Ética:</strong> actuar con honestidad, responsabilidad e integridad.<br>
-                        • <strong>Democrática:</strong> reconocer que las instituciones existen para servir a la
-                        sociedad.<br>
-                        • <strong>Humana:</strong> recordar siempre que el centro de nuestro trabajo son los seres
-                        humanos.
-
-                    </p>
-                </div> <!--.sin_barreras-->
-                <div class="crecimiento_c2">
-                    <p class="subtitulo__crecimiento">¿Qué significa ser "promotor de la igualdad"?</p>
-
-                    <p class="crecimiento_txt">
-                        Este concepto, impulsado por la Dra. Marcela Lagarde, implica que no somos solo espectadores de
-                        la ley, sino agentes activos que deben garantizar que la igualdad ocurra en la realidad
-                        (igualdad sustantiva). La igualdad no se construye solo con discursos; se construye en la forma
-                        en que:
-                        <br> <br> • Escuchamos y reconocemos a nuestras y nuestros colegas.<br>
-                        • Distribuimos las tareas y las oportunidades de desarrollo.<br>
-                        • Tomamos decisiones basadas en la dignidad humana y no en prejuicios o redes informales.
-
-                    </p>
-                </div><!-- .en_sintonia -->
-                <div class="crecimiento_c3">
-                    <p class="subtitulo__crecimiento">Erradicar, no solo disminuir </p>
-
-                    <p class="crecimiento_txt">
-                        Un mensaje clave de este compromiso es la ambición de nuestras metas. En la administración
-                        pública moderna, el objetivo no debe ser simplemente "disminuir" los indicadores de violencia,
-                        pobreza o desigualdad: la meta ética y profesional del funcionariado debe ser erradicar estas
-                        brechas de raíz. <br><br>Esto exige ser agentes de cambio positivo capaces de cuestionar las prácticas
-                        institucionales que, aunque parezcan normales, reproducen desigualdades.
-
-
-
-                    </p>
-                </div> 
-            </div>
-        </section><br>
-
-    </main>
-
-    <footer class="footer">
-        <img src="img/pleca/pleca5.svg" alt="pleca">
-        <div class="correo">
-            <p class="footer__texto2">Todos los derechos reservados Comision Nacional del Sistema de Ahorro Para el
-                Retiro | CONSAR |</P>
-            <p class="footer__texto"> Te queremos escuchar </p>
-            <a href="mailto:comunicacion_interna@consar.gob.mx" class="enlace-svg">
-                <img class="icon--sobre" src="img/icons/sobre.svg" alt="Contactar por correo">
-            </a>
-        </div>
-    </footer>
-    <script src="js/logica.js"></script>
 </body>
-
 </html>

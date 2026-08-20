@@ -1,0 +1,267 @@
+/* ========================================================================
+   PORTADA PRINCIPAL — AJUSTES EXCLUSIVOS DE index.html
+   ======================================================================== */
+
+.page-index {
+    --index-navy: #0b1f3a;
+    --index-navy-alt: #0f2b48;
+    --index-cyan: #00a896;
+    --index-cyan-hover: #008f80;
+    --fuente-primaria: "Plus Jakarta Sans", sans-serif;
+    --fuente-titulos: "Plus Jakarta Sans", sans-serif;
+    --fuente-texto: "Plus Jakarta Sans", sans-serif;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: var(--index-navy);
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Header compacto */
+.page-index .header,
+.page-index .footer {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    background: var(--index-navy);
+}
+
+.page-index .header {
+    position: relative;
+}
+
+.page-index .header__container {
+    padding: 15px 40px 10px;
+}
+
+.page-index .header__topbar {
+    top: 0.8rem;
+}
+
+.page-index .iconsLinks {
+    gap: 1rem;
+}
+
+.page-index .iconsLinks a {
+    width: 3rem;
+    height: 3rem;
+}
+
+.page-index .iconsLinks .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.page-index .header__branding {
+    margin: 0.2rem 0 0.7rem;
+}
+
+.page-index .header__logo--img {
+    width: clamp(21rem, 21vw, 24rem);
+}
+
+/* Navegación con underline animado en cian */
+.page-index .navegacion {
+    gap: clamp(2rem, 3vw, 3.5rem);
+    padding: 0.6rem 0;
+}
+
+.page-index .navegacion__enlace {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 0.45rem;
+    transition: color 250ms ease, opacity 250ms ease;
+}
+
+.page-index .navegacion__enlace::after {
+    bottom: 0;
+    height: 2px;
+    background-color: var(--index-cyan);
+    transition: width 280ms ease, left 280ms ease;
+}
+
+.page-index .navegacion__enlace:hover,
+.page-index .navegacion__enlace:focus-visible {
+    color: var(--index-cyan);
+}
+
+/* Área central ajustada al viewport */
+.page-index .main-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 0;
+}
+
+.page-index .seccion__inicio {
+    align-items: center;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+}
+
+/* Tarjeta glassmorphism */
+.page-index .grid__caja--inicio {
+    flex: 1;
+    height: auto;
+    max-height: calc(100vh - 210px);
+    max-height: calc(100dvh - 210px);
+    min-height: 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+/* Ilustraciones con flotación sutil de ±3px */
+.page-index .puerquito {
+    max-width: 100%;
+    max-height: 240px;
+    width: auto;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+}
+
+.page-index .imagen_temporada {
+    max-width: 100%;
+    max-height: 240px;
+    width: auto;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Insignia 2026 y botón en cian/turquesa */
+.page-index .texto__caja--auto {
+    background-color: var(--index-cyan);
+    box-shadow: 0 4px 12px rgba(0, 168, 150, 0.2);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.65rem 2.4rem;
+}
+
+.page-index .titulo_mes {
+    font-size: clamp(4.5rem, 6vw, 7.8rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--index-navy);
+}
+
+.page-index .boton__puntero > a {
+    background: var(--index-cyan);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 168, 150, 0.25);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 250ms ease, background-color 250ms ease, box-shadow 250ms ease;
+}
+
+.page-index .boton__puntero > a:hover,
+.page-index .boton__puntero > a:focus-visible {
+    transform: translateY(-2px);
+    background: var(--index-cyan-hover);
+    box-shadow: 0 9px 22px rgba(0, 168, 150, 0.32);
+}
+
+.page-index .boton__puntero > a:focus-visible,
+.page-index .navegacion__enlace:focus-visible {
+    outline: 3px solid rgba(0, 168, 150, 0.38);
+    outline-offset: 3px;
+}
+
+/* Footer compacto y anclado al fondo */
+.page-index .footer {
+    padding: 12px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+}
+
+.page-index .correo {
+    padding: 0;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.page-index .footer__texto,
+.page-index .footer__texto2 {
+    font-size: 1.25rem;
+}
+
+.page-index .icon--sobre {
+    width: 2.6rem;
+}
+
+/* En móvil se conserva el scroll natural para no ocultar contenido */
+@media (max-width: 768px) {
+    .page-index {
+        height: auto;
+        max-height: none;
+        min-height: 100dvh;
+        overflow-y: auto;
+    }
+
+    .page-index .header__container {
+        flex-direction: column;
+    }
+
+    .page-index .header__topbar {
+        position: static;
+        width: 100%;
+        justify-content: center;
+        margin: 0.8rem 0 0;
+        order: 2;
+    }
+
+    .page-index .header__branding {
+        order: 1;
+    }
+
+    .page-index .navegacion {
+        order: 3;
+    }
+
+    .page-index .grid__caja--inicio {
+        height: auto;
+        max-height: none;
+        width: calc(100% - 3rem);
+        flex-direction: column;
+    }
+
+    .page-index .correo {
+        flex-wrap: wrap;
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-index .puerquito,
+    .page-index .imagen_temporada {
+        animation: none;
+    }
+}
