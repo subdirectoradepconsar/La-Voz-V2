@@ -161,3 +161,11 @@
 @media (prefers-reduced-motion: reduce) {
     .page-brujula *, .page-brujula *::before, .page-brujula *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Escala de legibilidad: +30% */
+.compass-kicker { font-size: 1.4rem; }
+.compass-article h1 { max-width: 920px; font-size: clamp(3.4rem, 4vw, 4.2rem); }
+.compass-deck { font-size: 1.55rem; }
+.compass-copy > p { font-size: 2rem; line-height: 1.8; }
+.compass-stat span { font-size: 1.75rem; line-height: 1.7; }
+.compass-summary p { font-size: 1.75rem; line-height: 1.75; }

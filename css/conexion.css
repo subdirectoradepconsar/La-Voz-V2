@@ -140,3 +140,21 @@
 @media (prefers-reduced-motion: reduce) {
     .page-conexion *, .page-conexion *::before, .page-conexion *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Escala de legibilidad: +30% */
+.conexion-eyebrow { font-size: 1.4rem; }
+.page-conexion h1 { max-width: 920px; font-size: clamp(3.4rem, 4vw, 4.2rem); }
+.disclaimer p { font-size: 1.5rem; line-height: 1.7; }
+.bloque_vendedor { padding: clamp(2.6rem, 4vw, 4.2rem); grid-template-columns: minmax(0, 1.45fr) minmax(28rem, .8fr); }
+.card-label { font-size: 1.35rem; }
+.titulo_vendedor, .contact-card h2 { font-size: clamp(3rem, 3.8vw, 4.1rem); }
+.descripcion_vendedor { font-size: 2rem; line-height: 1.8; }
+.contact-list li { min-height: 5.2rem; padding: 1rem 1.3rem; }
+.contact-list span { font-size: 1.4rem; }
+.contact-list strong, .contact-list a { font-size: 1.7rem; }
+.contact-card p:not(.card-label) { font-size: 2rem; line-height: 1.8; }
+.contact-card__links a { padding: 1.5rem 1.8rem; font-size: 1.7rem; }
+
+@media (max-width: 767px) {
+    .bloque_vendedor { grid-template-columns: 1fr; padding: 2.4rem; }
+}

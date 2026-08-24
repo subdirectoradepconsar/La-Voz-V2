@@ -176,3 +176,20 @@ body.page-accion {
   html { scroll-behavior: auto; }
   .page-accion *, .page-accion *::before, .page-accion *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Escala de legibilidad: +30%, salvo la descripción secundaria del póster */
+body.page-accion { font-size: 1.2rem; line-height: 1.8; }
+.action-kicker { font-size: 1rem; }
+.action-article__header h1 { max-width: 1080px; font-size: clamp(2.3rem, 3.2vw, 2.8rem); }
+.action-deck { font-size: 1.1rem; }
+.action-copy p { font-size: clamp(1.15rem, 1.1rem + .22vw, 1.25rem); line-height: 1.82; }
+.action-copy p:first-child::first-letter { font-size: 5.4em; }
+.action-aside__caption h2 { font-size: 1.55rem; }
+.action-aside__caption,
+.action-aside__caption p { color: #64748b; font-size: .88rem; line-height: 1.65; }
+.action-cta { min-height: 58px; padding: .9rem 1.3rem; font-size: 1.02rem; }
+.footer__texto2, .footer__contact { font-size: 1rem; }
+
+@media (max-width: 600px) {
+  .action-article__header h1 { font-size: clamp(2.15rem, 9vw, 2.65rem); }
+}

@@ -120,3 +120,25 @@
 @media (prefers-reduced-motion:reduce) {
     .page-cumpleanos *, .page-cumpleanos *::before, .page-cumpleanos *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Escala de legibilidad: +30% en contenido y componentes */
+.birthday-eyebrow { font-size: 1.5rem; }
+.birthday-heading h1 { font-size: clamp(4.2rem, 5.8vw, 6.2rem); }
+.birthday-heading > p:last-child { max-width: 76rem; font-size: clamp(1.85rem, 2vw, 2.05rem); line-height: 1.8; }
+.birthday-search { width: min(100%, 68rem); min-height: 6rem; padding-inline: 2.1rem; }
+.birthday-search input { min-height: 5.8rem; font-size: 1.75rem; }
+.filter-pill { min-height: 5rem; padding: 1rem 1.6rem; font-size: 1.45rem; }
+.birthday-results { font-size: 1.5rem; }
+.birthday-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+.birthday-card { min-height: 26rem; padding: 2.8rem 2.3rem 2.4rem; }
+.birthday-avatar { width: 10rem; height: 10rem; }
+.birthday-date { padding: .65rem 1rem; font-size: 1.3rem; }
+.birthday-card h2 { font-size: 2.05rem; }
+.birthday-card p { font-size: 1.6rem; line-height: 1.75; }
+.birthday-empty { font-size: 1.85rem; line-height: 1.8; }
+
+@media (max-width: 560px) {
+    .birthday-grid { grid-template-columns: 1fr; }
+    .birthday-card { min-height: 21rem; grid-template-columns: 9rem minmax(0, 1fr); padding: 2rem 1.6rem; }
+    .birthday-avatar { width: 9rem; height: 9rem; }
+}

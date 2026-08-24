@@ -146,6 +146,47 @@ img {
     height: 2rem;
 }
 
+/* Patrón único de redes sociales para todas las cabeceras del portal */
+.header .header__topbar .iconsLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+
+.header .header__topbar .iconsLinks a {
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.78;
+    transition: opacity 0.2s ease, filter 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header .header__topbar .iconsLinks a:hover,
+.header .header__topbar .iconsLinks a:focus-visible {
+    background-color: rgb(255 255 255 / 10%);
+    opacity: 1;
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.header .header__topbar .iconsLinks a:focus-visible {
+    outline: 2px solid rgb(255 255 255 / 72%);
+    outline-offset: 2px;
+}
+
+.header .header__topbar .iconsLinks .icon {
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: brightness(0) invert(1);
+}
+
 /* Logo Central */
 .header__branding {
     margin: 0.5rem 0 1.5rem;

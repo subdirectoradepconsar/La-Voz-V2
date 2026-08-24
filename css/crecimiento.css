@@ -117,3 +117,13 @@
 @media (prefers-reduced-motion: reduce) {
     .page-crecimiento *, .page-crecimiento *::before, .page-crecimiento *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Escala de legibilidad: +30% */
+.growth-eyebrow, .pillar-label { font-size: 1.4rem; }
+.page-crecimiento h1 { font-size: clamp(4.4rem, 6vw, 6.2rem); }
+.growth-badge { font-size: 1.6rem; }
+.growth-intro, .pillar-card > p, .dimensions-list, .accent-list { font-size: 2rem; line-height: 1.8; }
+.dimensions-list strong { font-size: 1.8rem; }
+.dimensions-list span, .accent-list li { font-size: 1.8rem; line-height: 1.8; }
+.pillar-card h2 { font-size: clamp(2.8rem, 3.5vw, 3.8rem); }
+.pillar-card { padding: clamp(2.6rem, 4vw, 4rem); }

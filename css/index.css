@@ -150,3 +150,40 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
     .page-index *, .page-index *::before, .page-index *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Mismo patrón de redes del navbar compartido (index no carga style.css) */
+.header .header__topbar .iconsLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+.header .header__topbar .iconsLinks a {
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.78;
+    transition: opacity 0.2s ease, filter 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.header .header__topbar .iconsLinks a:hover,
+.header .header__topbar .iconsLinks a:focus-visible {
+    background-color: rgb(255 255 255 / 10%);
+    opacity: 1;
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+.header .header__topbar .iconsLinks a:focus-visible {
+    outline: 2px solid rgb(255 255 255 / 72%);
+    outline-offset: 2px;
+}
+.header .header__topbar .iconsLinks .icon {
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: brightness(0) invert(1);
+}
