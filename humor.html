@@ -1,167 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C08WHWTTN7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-C08WHWTTN7');
-    </script> <!-- Google tag (gtag.js) -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Voz | HUMOR</title>
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="El lado divertido de nuestro equipo: memes y buenos momentos de la comunidad CONSAR.">
+    <meta name="theme-color" content="#c6531a">
+    <title>La Voz | Humor</title>
     <link rel="icon" href="img/favicon_la_voz.webp" type="image/webp">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/portada.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/humor.css">
 </head>
 
 <body class="page-humor">
-    <!-- Encabezado / Header Institucional -->
     <header class="header">
         <div class="header__container">
-            <!-- Botón Hamburguesa para Móvil -->
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a class="header__logo" href="index.html" aria-label="Ir al inicio de La Voz">
+                <img class="header__logo--img" src="img/logo_la_voz.svg" alt="La Voz" width="440" height="89">
+            </a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
 
-            <!-- Tira de Redes Sociales (Esquina Superior Derecha) -->
-            <div class="header__topbar">
-                <section class="iconsLinks" aria-label="Redes Sociales CONSAR">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ConsarMexico/?locale=es_LA" aria-label="Facebook">
-                        <img class="icon" src="img/icons/facebook.svg" alt="facebook">
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://x.com/consar_mx?lang=es" aria-label="Twitter X">
-                        <img class="icon" src="img/icons/twitterX.svg" alt="X">
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/consar_mx/?hl=es" aria-label="Instagram">
-                        <img class="icon" src="img/icons/instagram.svg" alt="instagram">
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CONSARMexico" aria-label="YouTube">
-                        <img class="icon" src="img/icons/youtube.svg" alt="youtube">
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@consar_mx" aria-label="TikTok">
-                        <img class="icon" src="img/icons/tiktok.svg" alt="tiktok">
-                    </a>
-                </section>
-            </div>
-
-            <!-- Logo Principal Centrado y Jerarquizado -->
-            <div class="header__branding">
-                <a class="header__logo" href="index.html" aria-label="Inicio La Voz">
-                    <img class="header__logo--img" src="img/logo_la_voz.svg" alt="La Voz">
-                </a>
-            </div>
-
-            <!-- Barra de Navegación Horizontal Debajo del Logo -->
-            <nav class="navegacion" id="nav-menu" aria-label="Menú principal">
-                <a class="navegacion__enlace" href="accion.html">acción</a>
-                <a class="navegacion__enlace" href="brujula.html">brújula</a>
-                <a class="navegacion__enlace" href="tiempo_libre.html">tiempo libre</a>
-                <a class="navegacion__enlace" href="crecimiento.html">crecimiento</a>
-                <a class="navegacion__enlace navegacion__enlace--activo navegacion__enlace--gif" href="humor.html">
-                    <span>humor</span>
-                </a>
-                <a class="navegacion__enlace" href="conexion.html">conexión</a>
+            <nav class="navegacion" id="nav-menu" aria-label="Navegación principal">
+                <a class="navegacion__enlace" href="accion.html">Acción</a>
+                <a class="navegacion__enlace" href="brujula.html">Brújula</a>
+                <a class="navegacion__enlace" href="tiempo_libre.html">Tiempo libre</a>
+                <a class="navegacion__enlace" href="crecimiento.html">Crecimiento</a>
+                <a class="navegacion__enlace navegacion__enlace--activo" href="humor.html" aria-current="page">Humor</a>
+                <a class="navegacion__enlace" href="conexion.html">Conexión</a>
             </nav>
+
+            <div class="header__topbar">
+                <div class="iconsLinks" aria-label="Redes sociales de CONSAR">
+                    <a href="https://www.facebook.com/ConsarMexico/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook de CONSAR"><img class="icon" src="img/icons/facebook.svg" alt=""></a>
+                    <a href="https://x.com/consar_mx?lang=es" target="_blank" rel="noopener noreferrer" aria-label="X de CONSAR"><img class="icon" src="img/icons/twitterX.svg" alt=""></a>
+                    <a href="https://www.instagram.com/consar_mx/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram de CONSAR"><img class="icon" src="img/icons/instagram.svg" alt=""></a>
+                    <a href="https://www.youtube.com/user/CONSARMexico" target="_blank" rel="noopener noreferrer" aria-label="YouTube de CONSAR"><img class="icon" src="img/icons/youtube.svg" alt=""></a>
+                    <a href="https://www.tiktok.com/@consar_mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok de CONSAR"><img class="icon" src="img/icons/tiktok.svg" alt=""></a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main>
-
-        <section class="seccion__humor" aria-labelledby="humor-title">
-            <div class="grid__caja--humor">
-                <header class="humor-heading">
-                    <h1 class="titulo_principal" id="humor-title">El lado divertido de nuestro equipo</h1>
-                    <span class="texto__caja--humor"><span aria-hidden="true">✨</span> Good Vibes</span>
-                </header>
-
-                <div class="humor-gallery" aria-label="Galería de memes">
-                    <article class="meme-card meme1">
-                        <span class="meme-card__tag">MOMAZOS</span>
-                        <button class="contenedor__meme" type="button" aria-label="Ampliar meme Encuentros cercanos con tu futuro">
-                            <img class="meme_img" src="img/humor/ME1.jpg"
-                                alt="Meme del gatito: Encuentros cercanos con tu futuro">
-                        </button>
-                        <div class="meme-card__actions">
-                            <button class="meme-like" type="button" aria-pressed="false" aria-label="Me gusta">
-                                <span class="meme-like__icon" aria-hidden="true">♥</span>
-                                <span>Me gusta</span>
-                                <span class="meme-like__count">24</span>
-                            </button>
-                            <button class="meme-zoom" type="button" aria-label="Ampliar meme Encuentros cercanos con tu futuro">
-                                <span aria-hidden="true">⌕</span>
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="meme-card meme2">
-                        <span class="meme-card__tag">#MEMESAR</span>
-                        <button class="contenedor__meme" type="button" aria-label="Ampliar meme de la hormiguita">
-                            <img class="meme_img" src="img/humor/ME2.jpg" alt="Meme de la hormiguita, MEMESAR">
-                        </button>
-                        <div class="meme-card__actions">
-                            <button class="meme-like" type="button" aria-pressed="false" aria-label="Me gusta">
-                                <span class="meme-like__icon" aria-hidden="true">♥</span>
-                                <span>Me gusta</span>
-                                <span class="meme-like__count">31</span>
-                            </button>
-                            <button class="meme-zoom" type="button" aria-label="Ampliar meme de la hormiguita">
-                                <span aria-hidden="true">⌕</span>
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="meme-card meme3">
-                        <span class="meme-card__tag">DETRÁS DE CÁMARAS</span>
-                        <button class="contenedor__meme" type="button" aria-label="Ampliar meme del cerdito futbolista">
-                            <img class="meme_img" src="img/humor/ME3.jpg" alt="Meme del cerdito futbolista: Hazle zoom a mi patita derecha">
-                        </button>
-                        <div class="meme-card__actions">
-                            <button class="meme-like" type="button" aria-pressed="false" aria-label="Me gusta">
-                                <span class="meme-like__icon" aria-hidden="true">♥</span>
-                                <span>Me gusta</span>
-                                <span class="meme-like__count">18</span>
-                            </button>
-                            <button class="meme-zoom" type="button" aria-label="Ampliar meme del cerdito futbolista">
-                                <span aria-hidden="true">⌕</span>
-                            </button>
-                        </div>
-                    </article>
+    <main id="contenido-principal">
+        <section class="humor-hero" aria-labelledby="humor-title">
+            <div class="humor-container humor-heading">
+                <p class="humor-eyebrow">Zona de humor</p>
+                <h1 id="humor-title">El lado divertido de nuestro equipo</h1>
+                <div class="good-vibes" role="note">
+                    <span class="good-vibes__spark" aria-hidden="true">✨</span>
+                    <span>Good Vibes</span>
                 </div>
             </div>
         </section>
 
+        <section class="humor-feed" aria-label="Feed multimedia de humor">
+            <div class="humor-container humor-gallery">
+                <article class="meme-card">
+                    <button class="contenedor__meme" type="button" aria-label="Ampliar meme Encuentros cercanos con tu futuro">
+                        <img class="meme_img" src="img/humor/ME1.jpg" alt="Meme del gatito: Encuentros cercanos con tu futuro" loading="eager">
+                        <span class="meme-card__overlay" aria-hidden="true">Ver en grande</span>
+                    </button>
+                </article>
+
+                <article class="meme-card">
+                    <button class="contenedor__meme" type="button" aria-label="Ampliar meme de la hormiguita">
+                        <img class="meme_img" src="img/humor/ME2.jpg" alt="Meme de la hormiguita, MEMESAR" loading="lazy">
+                        <span class="meme-card__overlay" aria-hidden="true">Ver en grande</span>
+                    </button>
+                </article>
+
+                <article class="meme-card">
+                    <button class="contenedor__meme" type="button" aria-label="Ampliar meme del cerdito futbolista">
+                        <img class="meme_img" src="img/humor/ME3.jpg" alt="Meme del cerdito futbolista: Hazle zoom a mi patita derecha" loading="lazy">
+                        <span class="meme-card__overlay" aria-hidden="true">Ver en grande</span>
+                    </button>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="correo">
-            <p class="footer__texto2">Todos los derechos reservados Comision Nacional del Sistema de Ahorro Para el
-                Retiro | CONSAR |</P>
-            <p class="footer__texto"> Te queremos escuchar </p>
-            <a href="mailto:comunicacion_interna@consar.gob.mx" class="enlace-svg">
-                <img class="icon--sobre" src="img/icons/sobre.svg" alt="Contactar por correo">
-            </a>
+        <div class="footer__inner">
+            <p class="footer__texto2">© Comisión Nacional del Sistema de Ahorro para el Retiro. Todos los derechos reservados.</p>
+            <a class="footer__contact" href="mailto:comunicacion_interna@consar.gob.mx"><span>Te queremos escuchar</span><img class="icon--sobre" src="img/icons/sobre.svg" alt="" width="32" height="32"></a>
         </div>
     </footer>
-    <!-- Visor Modal Meme -->
+
     <div class="modal-meme" id="modal-meme" role="dialog" aria-modal="true" aria-label="Meme ampliado" aria-hidden="true">
         <button class="modal-meme__cerrar" id="modal-cerrar" type="button" aria-label="Cerrar visor">&times;</button>
         <div class="modal-meme__dialog">
             <img class="modal-meme__img" id="modal-img" src="" alt="Meme ampliado">
         </div>
     </div>
-
-    <script src="js/logica.js?v=humor-feed-2"></script>
+    <script src="js/logica.js?v=20260821-2"></script>
 </body>
 </html>

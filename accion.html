@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C08WHWTTN7"></script>
@@ -8,44 +8,32 @@
         gtag('js', new Date());
         gtag('config', 'G-C08WHWTTN7');
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CONSAR: 32 años fortaleciendo el ahorro para el retiro.">
+    <meta name="theme-color" content="#4c0519">
     <title>La Voz | Acción</title>
     <link rel="icon" href="img/favicon_la_voz.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/portada.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/accion.css?v=20260819">
+    <link rel="stylesheet" href="css/accion.css?v=20260821">
 </head>
 
 <body class="page-accion">
     <header class="header">
         <div class="header__container">
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false">
+            <a class="header__logo" href="index.html" aria-label="Ir al inicio de La Voz">
+                <img class="header__logo--img" src="img/logo_la_voz.svg" alt="La Voz" width="440" height="89">
+            </a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
 
-            <div class="header__topbar">
-                <section class="iconsLinks" aria-label="Redes Sociales CONSAR">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ConsarMexico/?locale=es_LA" aria-label="Facebook"><img class="icon" src="img/icons/facebook.svg" alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://x.com/consar_mx?lang=es" aria-label="X"><img class="icon" src="img/icons/twitterX.svg" alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/consar_mx/?hl=es" aria-label="Instagram"><img class="icon" src="img/icons/instagram.svg" alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CONSARMexico" aria-label="YouTube"><img class="icon" src="img/icons/youtube.svg" alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@consar_mx" aria-label="TikTok"><img class="icon" src="img/icons/tiktok.svg" alt=""></a>
-                </section>
-            </div>
-
-            <div class="header__branding">
-                <a class="header__logo" href="index.html" aria-label="Inicio La Voz">
-                    <img class="header__logo--img" src="img/logo_la_voz.svg" alt="La Voz">
-                </a>
-            </div>
-
-            <nav class="navegacion" id="nav-menu" aria-label="Menú principal">
+            <nav class="navegacion" id="nav-menu" aria-label="Navegación principal">
                 <a class="navegacion__enlace navegacion__enlace--activo" href="accion.html" aria-current="page">Acción</a>
                 <a class="navegacion__enlace" href="brujula.html">Brújula</a>
                 <a class="navegacion__enlace" href="tiempo_libre.html">Tiempo libre</a>
@@ -53,11 +41,21 @@
                 <a class="navegacion__enlace" href="humor.html">Humor</a>
                 <a class="navegacion__enlace" href="conexion.html">Conexión</a>
             </nav>
+
+            <div class="header__topbar">
+                <div class="iconsLinks" aria-label="Redes sociales de CONSAR">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ConsarMexico/?locale=es_LA" aria-label="Facebook de CONSAR"><img class="icon" src="img/icons/facebook.svg" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://x.com/consar_mx?lang=es" aria-label="X de CONSAR"><img class="icon" src="img/icons/twitterX.svg" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/consar_mx/?hl=es" aria-label="Instagram de CONSAR"><img class="icon" src="img/icons/instagram.svg" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CONSARMexico" aria-label="YouTube de CONSAR"><img class="icon" src="img/icons/youtube.svg" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@consar_mx" aria-label="TikTok de CONSAR"><img class="icon" src="img/icons/tiktok.svg" alt=""></a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="action-main">
-        <article class="action-article" aria-labelledby="action-title">
+    <main class="action-main" id="contenido-principal">
+        <article class="action-article" id="action-article" aria-labelledby="action-title">
             <header class="action-article__header">
                 <p class="action-kicker">Acción · CONSAR</p>
                 <h1 id="action-title">CONSAR: 32 años fortaleciendo el ahorro para el retiro</h1>
@@ -66,39 +64,33 @@
 
             <div class="action-layout">
                 <div class="action-copy">
-                    <p>La Comisión Nacional del Sistema de Ahorro para el Retiro (CONSAR) celebra su 32 aniversario reafirmando su compromiso de proteger el patrimonio pensionario de las y los trabajadores de México. Durante estas más de tres décadas, el Sistema de Ahorro para el Retiro (SAR) ha evolucionado para ofrecer mejores condiciones a quienes ahorran para su retiro, fortaleciendo la competencia entre las Afores, reduciendo las comisiones y promoviendo mayores rendimientos que benefician directamente a millones de cuentas individuales.</p>
+                    <p>La Comisión Nacional del Sistema de Ahorro para el Retiro (<strong>CONSAR</strong>) celebra su 32 aniversario reafirmando su compromiso de proteger el patrimonio pensionario de las y los trabajadores de México. Durante estas más de tres décadas, el <strong>Sistema de Ahorro para el Retiro (SAR)</strong> ha evolucionado para ofrecer mejores condiciones a quienes ahorran para su retiro, fortaleciendo la competencia entre las <strong>Afores</strong>, reduciendo las comisiones y promoviendo mayores rendimientos que benefician directamente a millones de cuentas individuales.</p>
 
-                    <p>Hoy, el SAR administra recursos que representan una parte importante de la economía nacional y continúan generando valor para las personas trabajadoras mediante estrategias de inversión de largo plazo. Además de contribuir al crecimiento del ahorro pensionario, estos recursos impulsan el desarrollo de sectores estratégicos como infraestructura, energía, vivienda y carreteras, fortaleciendo tanto el patrimonio de las y los trabajadores como el desarrollo del país.</p>
+                    <p>Hoy, el <strong>SAR</strong> administra recursos que representan una parte importante de la economía nacional y continúan generando valor para las personas trabajadoras mediante estrategias de inversión de largo plazo. Además de contribuir al crecimiento del ahorro pensionario, estos recursos impulsan el desarrollo de sectores estratégicos como infraestructura, energía, vivienda y carreteras, fortaleciendo tanto el patrimonio de las y los trabajadores como el desarrollo del país.</p>
 
-                    <p>La modernización del Sistema también ha facilitado que las personas trabajadoras tengan un mayor control sobre su cuenta individual. Herramientas como AforeWeb, AforeMóvil, el Monitor Afore y la figura del Asesor Previsional permiten realizar trámites de manera más sencilla, consultar información relevante y comparar el desempeño de las Afores para tomar decisiones informadas sobre el ahorro para el retiro.</p>
+                    <p>La modernización del Sistema también ha facilitado que las personas trabajadoras tengan un mayor control sobre su cuenta individual. Herramientas como <strong>AforeWeb</strong>, <strong>AforeMóvil</strong>, el <strong>Monitor Afore</strong> y la figura del <strong>Asesor Previsional</strong> permiten realizar trámites de manera más sencilla, consultar información relevante y comparar el desempeño de las Afores para tomar decisiones informadas sobre el ahorro para el retiro.</p>
 
                     <p>En este aniversario, la CONSAR invita a las y los trabajadores a registrar su cuenta en una Afore, consultar periódicamente su estado de cuenta, designar personas beneficiarias y fortalecer su ahorro mediante aportaciones voluntarias. Con estas acciones, la Comisión refrenda su compromiso de seguir construyendo un Sistema de Ahorro para el Retiro más sólido, innovador y cercano a las personas, con el objetivo de contribuir a que cada vez más mexicanas y mexicanos alcancen una mejor pensión.</p>
                 </div>
 
                 <aside class="action-aside" aria-label="Contenido destacado de CONSAR">
                     <a class="action-visual" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/consar_mx/p/DbGf7WMEfuj/?hl=es" aria-label="Ver publicación de CONSAR en Instagram">
-                        <img src="img/accion/DOCU.png" alt="Campaña CONSAR: Es tuya, siempre lo ha sido">
+                        <img src="img/accion/DOCU.png" alt="Campaña CONSAR: Es tuya, siempre lo ha sido" loading="lazy">
                     </a>
-
                     <p class="action-aside__caption">Conoce las herramientas y acciones que te ayudan a tomar el control de tu ahorro para el retiro.</p>
-
-                    <a class="action-cta" target="_blank" rel="noopener noreferrer" href="https://www.gob.mx/consar/articulos/en-su-32-aniversario-la-consar-reafirma-su-compromiso-de-resguardar-el-patrimonio-pensionario-de-las-y-los-trabajadores-430852?idiom=es">
-                        Más información
-                        <span aria-hidden="true">→</span>
-                    </a>
+                    <a class="action-cta" target="_blank" rel="noopener noreferrer" href="https://www.gob.mx/consar/articulos/en-su-32-aniversario-la-consar-reafirma-su-compromiso-de-resguardar-el-patrimonio-pensionario-de-las-y-los-trabajadores-430852?idiom=es">Más información <span aria-hidden="true">→</span></a>
                 </aside>
             </div>
         </article>
     </main>
 
     <footer class="footer">
-        <div class="correo">
-            <p class="footer__texto2">Todos los derechos reservados Comisión Nacional del Sistema de Ahorro para el Retiro | CONSAR |</p>
-            <p class="footer__texto">Te queremos escuchar</p>
-            <a href="mailto:comunicacion_interna@consar.gob.mx" class="enlace-svg" aria-label="Enviar correo de contacto"><img class="icon--sobre" src="img/icons/sobre.svg" alt=""></a>
+        <div class="footer__inner">
+            <p class="footer__texto2">© Comisión Nacional del Sistema de Ahorro para el Retiro. Todos los derechos reservados.</p>
+            <a class="footer__contact" href="mailto:comunicacion_interna@consar.gob.mx"><span>Te queremos escuchar</span><img class="icon--sobre" src="img/icons/sobre.svg" alt="" width="32" height="32"></a>
         </div>
     </footer>
 
-    <script src="js/logica.js"></script>
+    <script src="js/logica.js?v=20260821-2"></script>
 </body>
 </html>
