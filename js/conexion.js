@@ -68,6 +68,12 @@
         previousButton?.addEventListener('click', () => showSlide(activeIndex - 1));
         nextButton?.addEventListener('click', () => showSlide(activeIndex + 1));
 
+        track.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+            event.preventDefault();
+            showSlide(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+        });
+
         track.addEventListener('scroll', () => {
             if (scrollFrame !== null) window.cancelAnimationFrame(scrollFrame);
             scrollFrame = window.requestAnimationFrame(() => {
