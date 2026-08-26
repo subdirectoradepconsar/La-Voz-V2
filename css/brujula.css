@@ -4,15 +4,17 @@
     --compass-text: #0f172a;
     --compass-body: #334155;
     --compass-muted: #64748b;
-    --compass-deep: #0c4a6e;
-    --compass-petrol: #0e7490;
-    --compass-cyan: #0891b2;
-    --compass-teal: #0d9488;
-    --compass-soft: #ecfeff;
-    --compass-mint: #f0fdfa;
+    --compass-primary: #2c4e92;
+    --compass-primary-rgb: 44 78 146;
+    --compass-deep: #2c4e92;
+    --compass-petrol: #2c4e92;
+    --compass-cyan: #2c4e92;
+    --compass-teal: #2c4e92;
+    --compass-soft: #eef3ff;
+    --compass-mint: #f3f6fc;
     --compass-border: #e2e8f0;
     --compass-shadow: 0 4px 20px -2px rgb(15 23 42 / 5%);
-    --compass-shadow-hover: 0 20px 36px -22px rgb(14 116 144 / 35%);
+    --compass-shadow-hover: 0 20px 36px -22px rgb(var(--compass-primary-rgb) / 35%);
     --compass-body-font: "Plus Jakarta Sans", system-ui, sans-serif;
     --compass-heading-font: "Outfit", system-ui, sans-serif;
     --compass-container: 1180px;
@@ -24,7 +26,7 @@
     flex-direction: column;
     overflow-x: hidden;
     background:
-        radial-gradient(circle at 90% 8%, rgb(8 145 178 / 5%), transparent 32rem),
+        radial-gradient(circle at 90% 8%, rgb(var(--compass-primary-rgb) / 6%), transparent 32rem),
         var(--compass-bg);
     color: var(--compass-body);
     font-family: var(--compass-body-font);
@@ -34,7 +36,7 @@
 
 .page-brujula :where(h1, p, figure, blockquote) { margin-top: 0; }
 .page-brujula :where(button, a) { -webkit-tap-highlight-color: transparent; }
-.page-brujula a:focus-visible, .page-brujula button:focus-visible { outline: 3px solid #67e8f9; outline-offset: 3px; }
+.page-brujula a:focus-visible, .page-brujula button:focus-visible { outline: 3px solid rgb(var(--compass-primary-rgb) / 38%); outline-offset: 3px; }
 
 /* Cabecera compacta: misma escala que Conexión */
 .page-brujula .header {
@@ -43,9 +45,9 @@
     z-index: 1000;
     min-height: 7.2rem;
     padding: 0;
-    background: rgb(12 74 110 / 96%) !important;
+    background: rgb(var(--compass-primary-rgb) / 96%) !important;
     border-bottom: 1px solid rgb(255 255 255 / 13%);
-    box-shadow: 0 6px 22px rgb(15 23 42 / 13%);
+    box-shadow: 0 6px 22px rgb(var(--compass-primary-rgb) / 22%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -72,8 +74,13 @@
 .page-brujula .navegacion { width: auto; padding: 0; border: 0; display: flex; justify-content: center; gap: clamp(.3rem, 1vw, 1.2rem); }
 .page-brujula .navegacion__enlace { min-height: 4rem; padding: .9rem 1rem; border-radius: 999px; color: rgb(255 255 255 / 78%); font-family: var(--compass-body-font); font-size: 1.25rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; transition: color .2s ease, background-color .2s ease; }
 .page-brujula .navegacion__enlace::after { display: none; }
+@media (hover: hover) and (pointer: fine) {
+    .page-brujula .navegacion__enlace { position: relative; }
+    .page-brujula .navegacion__enlace::after { content: ""; position: absolute; right: 1rem; bottom: .5rem; left: 1rem; display: block; width: auto; height: 2px; background: #b7c7e8; border-radius: 99px; box-shadow: 0 0 .7rem rgb(183 199 232 / 72%); transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+    .page-brujula .navegacion__enlace:hover::after, .page-brujula .navegacion__enlace:focus-visible::after { right: 1rem; left: 1rem; width: auto; transform: scaleX(1); }
+}
 .page-brujula .navegacion__enlace:hover { color: #fff; background: rgb(255 255 255 / 8%); }
-.page-brujula .navegacion__enlace--activo { color: #fff; background: rgb(103 232 249 / 16%); box-shadow: inset 0 0 0 1px rgb(165 243 252 / 15%); }
+.page-brujula .navegacion__enlace--activo { color: #fff; background: rgb(255 255 255 / 14%); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 12%); }
 
 /* Entrada editorial compacta */
 .compass-main { flex: 1; width: 100%; padding-bottom: clamp(6rem, 9vw, 10rem); }
@@ -81,7 +88,7 @@
 .compass-article__header { padding: 1.8rem 0 1.6rem; text-align: center; }
 .compass-kicker { margin-bottom: .25rem; color: var(--compass-petrol); font-size: 1.05rem; font-weight: 700; letter-spacing: .13em; line-height: 1.4; text-transform: uppercase; }
 .compass-article h1 { max-width: 780px; margin: 0 auto 1rem; color: var(--compass-text); font-family: var(--compass-heading-font); font-size: clamp(2.6rem, 3vw, 3rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; text-wrap: balance; }
-.compass-deck { width: fit-content; max-width: 760px; margin: 0 auto; padding: .65rem 1.1rem; color: var(--compass-petrol); background: var(--compass-soft); border: 1px solid #bae6fd; border-radius: .8rem; font: 600 1.15rem/1.45 var(--compass-body-font); }
+.compass-deck { width: fit-content; max-width: 760px; margin: 0 auto; padding: .65rem 1.1rem; color: var(--compass-primary); background: var(--compass-soft); border: 1px solid #cdd9f1; border-radius: .8rem; font: 600 1.15rem/1.45 var(--compass-body-font); }
 
 /* Lienzo principal */
 .compass-card { padding: clamp(2rem, 3vw, 3.2rem); background: var(--compass-surface); border: 1px solid #f1f5f9; border-radius: 2rem; box-shadow: var(--compass-shadow); }
@@ -89,6 +96,8 @@
 .compass-copy { min-width: 0; }
 .compass-copy > p { margin: 0; color: var(--compass-body); font: 400 1.6rem/1.75 var(--compass-body-font); text-wrap: pretty; overflow-wrap: anywhere; }
 .compass-copy > p + p { margin-top: 1.6rem; }
+.compass-copy > h2 { margin: 2.2rem 0 .75rem; color: var(--compass-primary); font-family: var(--compass-heading-font); font-size: 1.85rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.3; text-wrap: balance; }
+.compass-copy strong { color: var(--compass-primary); font-weight: 700; }
 
 .compass-stat {
     display: grid;
@@ -97,23 +106,23 @@
     gap: 1.6rem;
     margin: 2rem 0;
     padding: 1.5rem 1.8rem;
-    background: linear-gradient(135deg, #ecfeff, #f0fdfa);
-    border: 1px solid #a5f3fc;
+    background: linear-gradient(135deg, var(--compass-soft), var(--compass-mint));
+    border: 1px solid #c7d5ef;
     border-radius: 1.6rem;
-    box-shadow: 0 10px 24px -20px rgb(14 116 144 / 45%);
+    box-shadow: 0 10px 24px -20px rgb(var(--compass-primary-rgb) / 45%);
 }
 
 .compass-stat strong { color: var(--compass-petrol); font-family: var(--compass-heading-font); font-size: clamp(3.4rem, 4vw, 4.8rem); font-weight: 700; letter-spacing: -.045em; line-height: 1; }
-.compass-stat span { color: #31566a; font-size: 1.35rem; font-weight: 600; line-height: 1.5; }
+.compass-stat span { color: #405783; font-size: 1.35rem; font-weight: 600; line-height: 1.5; }
 
 .compass-aside { position: sticky; top: 9.2rem; display: grid; gap: 1.6rem; }
 .compass-visual { margin: 0; overflow: hidden; background: #f8fafc; border: 1px solid var(--compass-border); border-radius: 1.6rem; box-shadow: 0 12px 28px -20px rgb(15 23 42 / 45%); }
 .compass-visual img { display: block; width: 100%; height: auto; transition: transform .35s cubic-bezier(.16, 1, .3, 1); }
 .compass-visual:hover img { transform: scale(1.025); }
 
-.compass-summary { position: relative; margin: 0; padding: 1.8rem 1.8rem 1.8rem 2.2rem; overflow: hidden; background: var(--compass-mint); border: 1px solid #ccfbf1; border-left: 4px solid var(--compass-teal); border-radius: 0 1.4rem 1.4rem 0; }
-.compass-summary > span { position: absolute; top: -.9rem; left: 1.1rem; color: rgb(13 148 136 / 13%); font-family: Georgia, serif; font-size: 7rem; line-height: 1; }
-.compass-summary p { position: relative; margin: 0; color: #285c59; font: italic 600 1.35rem/1.65 var(--compass-body-font); }
+.compass-summary { position: relative; margin: 0; padding: 1.8rem 1.8rem 1.8rem 2.2rem; overflow: hidden; background: var(--compass-mint); border: 1px solid #d6e0f3; border-left: 4px solid var(--compass-primary); border-radius: 0 1.4rem 1.4rem 0; }
+.compass-summary > span { position: absolute; top: -.9rem; left: 1.1rem; color: rgb(var(--compass-primary-rgb) / 13%); font-family: Georgia, serif; font-size: 7rem; line-height: 1; }
+.compass-summary p { position: relative; margin: 0; color: #405783; font: italic 600 1.35rem/1.65 var(--compass-body-font); }
 
 /* Pie claro */
 .page-brujula .footer { margin-top: auto; padding: 2.4rem 0; background: #fff; border-top: 1px solid var(--compass-border); }
@@ -167,5 +176,6 @@
 .compass-article h1 { max-width: 920px; font-size: clamp(3.4rem, 4vw, 4.2rem); }
 .compass-deck { font-size: 1.55rem; }
 .compass-copy > p { font-size: 2rem; line-height: 1.8; }
+.compass-copy > h2 { font-size: 2.2rem; }
 .compass-stat span { font-size: 1.75rem; line-height: 1.7; }
 .compass-summary p { font-size: 1.75rem; line-height: 1.75; }

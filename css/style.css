@@ -723,3 +723,123 @@ img {
     height: 1.7rem;
     filter: brightness(0) invert(1);
 }
+
+/* Iconos del header: valores calculados de la página Acción */
+.header .header__topbar .iconsLinks {
+    gap: 12px !important;
+}
+
+.header .header__topbar .iconsLinks a {
+    width: 51px !important;
+    height: 51px !important;
+}
+
+.header .header__topbar .iconsLinks .icon {
+    width: 27px !important;
+    height: 27px !important;
+}
+
+/* Footer uniforme: valores calculados de la página Acción */
+.footer {
+    padding: 0 !important;
+    border-top: 1px solid #e8e3dd !important;
+    background: rgb(255 255 255 / 64%) !important;
+}
+
+.footer .footer__inner {
+    width: min(calc(100% - 32px), 1240px) !important;
+    min-height: 86px !important;
+    margin-inline: auto !important;
+    padding: 20px 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    text-align: left !important;
+}
+
+.footer .footer__texto2 {
+    font-family: var(--fuentePrimaria) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #64748b !important;
+    margin: 0 !important;
+}
+
+.footer .footer__contact {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
+    color: #881337 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.footer .footer-socials {
+    gap: 12px !important;
+}
+
+.footer .footer-socials a {
+    flex-basis: 51px !important;
+    width: 51px !important;
+    height: 51px !important;
+}
+
+.footer .footer-socials img {
+    width: 27px !important;
+    height: 27px !important;
+}
+
+.footer .icon--sobre {
+    width: 18px !important;
+    height: 18px !important;
+    filter: none !important;
+}
+
+.footer .footer__whatsapp-row {
+    width: min(calc(100% - 32px), 1240px);
+    margin: 0 auto;
+    padding: 0 16px 18px;
+    color: #475569;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer .footer__whatsapp-row a {
+    color: #087f5b;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.footer .footer__whatsapp-row a:hover,
+.footer .footer__whatsapp-row a:focus-visible {
+    color: #075e54;
+}
+
+@media (max-width: 860px) {
+    .footer .footer__inner {
+        width: min(calc(100% - 20px), 1240px) !important;
+        min-height: 112px !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .footer .footer__whatsapp-row {
+        width: min(calc(100% - 20px), 1240px);
+        padding-inline: 10px;
+        font-size: 14px;
+    }
+}

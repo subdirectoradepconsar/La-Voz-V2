@@ -18,8 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/humor.css">
+    <link rel="stylesheet" href="css/style.css?v=20260825-2">
+    <link rel="stylesheet" href="css/humor.css?v=20260826-1">
 </head>
 
 <body class="page-humor">
@@ -89,6 +89,12 @@
                     </button>
                 </article>
             </div>
+
+            <div class="humor-container humor-reel" aria-label="Video de humor">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DcRJJHvjz2n/" data-instgrm-version="14">
+                    <a href="https://www.instagram.com/reel/DcRJJHvjz2n/" target="_blank" rel="noopener noreferrer">Ver video en Instagram <span aria-hidden="true">↗</span></a>
+                </blockquote>
+            </div>
         </section>
     </main>
 
@@ -104,14 +110,17 @@
             </div>
             <a class="footer__contact" href="mailto:comunicacion_interna@consar.gob.mx"><span>Te queremos escuchar</span><img class="icon--sobre" src="img/icons/sobre.svg" alt="" width="32" height="32"></a>
         </div>
+        <p class="footer__whatsapp-row">Sigue el canal de CONSAR en WhatsApp: <a href="https://whatsapp.com/channel/0029VbD3v7bCsU9HXTioib1q" target="_blank" rel="noopener noreferrer">https://whatsapp.com/channel/0029VbD3v7bCsU9HXTioib1q <span aria-hidden="true">↗</span></a></p>
     </footer>
 
     <div class="modal-meme" id="modal-meme" role="dialog" aria-modal="true" aria-label="Meme ampliado" aria-hidden="true">
-        <button class="modal-meme__cerrar" id="modal-cerrar" type="button" aria-label="Cerrar visor">&times;</button>
+        <button class="modal-meme__cerrar" id="modal-cerrar" type="button" aria-label="Cerrar visor"><span aria-hidden="true">&times;</span></button>
         <div class="modal-meme__dialog">
             <img class="modal-meme__img" id="modal-img" src="" alt="Meme ampliado">
+            <a class="modal-meme__instagram" href="https://www.instagram.com/consar_mx/?hl=es" target="_blank" rel="noopener noreferrer">Ver más en Instagram <span aria-hidden="true">↗</span></a>
         </div>
     </div>
+    <script async src="https://www.instagram.com/embed.js"></script>
     <script src="js/logica.js?v=20260821-2"></script>
 </body>
 </html>

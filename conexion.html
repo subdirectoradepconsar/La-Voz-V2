@@ -11,14 +11,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Conexión: proyectos, productos y contenidos de la comunidad CONSAR.">
+    <meta name="theme-color" content="#7B2CBF">
     <title>La Voz | Conexión</title>
     <link rel="icon" href="img/favicon_la_voz.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/conexion.css">
+    <link rel="stylesheet" href="css/style.css?v=20260825-2">
+    <link rel="stylesheet" href="css/conexion.css?v=20260826-2">
 </head>
 <body class="page-conexion">
     <header class="header">
@@ -61,9 +62,11 @@
         </section>
         <section class="conexion-content" aria-label="Proyectos y contenidos de la comunidad">
             <div class="conexion-container cards-grid">
-                <article class="bloque_vendedor">
+                <div class="conexion-featured-grid" aria-label="Publicaciones destacadas">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container media-seminario"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/LogoSeminarioConsar.png" alt="Identidad gráfica del Seminario CONSAR" loading="lazy"></figure></div></div>
                     <div class="texto_vendedor">
-                        <p class="card-label">Contenido institucional</p>
+                        <p class="card-label">Institucional</p>
                         <h2 class="titulo_vendedor">Seminario CONSAR</h2>
                         <div class="descripcion_vendedor">
                             <p>Sigue los Seminarios CONSAR a través de YouTube y mantente al día con análisis, conferencias y conversaciones con especialistas sobre ahorro para el retiro, pensiones, educación financiera y bienestar económico.</p>
@@ -72,11 +75,11 @@
                             <a class="card-link" href="https://www.youtube.com/watch?v=utLW9f1HxTU&amp;list=PLIFrxYYI4h7U" target="_blank" rel="noopener noreferrer">Visita nuestro canal <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
-                    <div class="carousel-container media-seminario"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/LogoSeminarioConsar.png" alt="Identidad gráfica del Seminario CONSAR" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container media-artesanal"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/ARTESANAL.jpg" alt="Jabones naturales y velas artesanales Chiquét" loading="lazy"></figure></div></div>
                     <div class="texto_vendedor">
-                        <p class="card-label">Hecho a mano</p>
+                        <p class="card-label">Creatividad</p>
                         <h2 class="titulo_vendedor">Un detalle hecho con amor</h2>
                         <div class="descripcion_vendedor">
                             <p>En <strong>Chiquét</strong> tenemos el detalle perfecto para consentirte o sorprender a alguien especial. Descubre nuestros <strong>jabones naturales y velas artesanales</strong>, elaborados a mano con dedicación, aromas encantadores y ese toque único que hace especial cada creación.</p>
@@ -88,11 +91,11 @@
                             <p><strong>Hecho a mano, hecho con amor. Apoya lo artesanal y el consumo local.</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container media-artesanal"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/ARTESANAL.jpg" alt="Jabones naturales y velas artesanales Chiquét" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container media-wings"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/ham1.png" alt="Promoción de alimentos de Jhon Wings" loading="lazy"></figure></div></div>
                     <div class="texto_vendedor">
-                        <p class="card-label">Alimentos</p>
+                        <p class="card-label">Sabores</p>
                         <h2 class="titulo_vendedor">¿Antojo de algo irresistible?</h2>
                         <div class="descripcion_vendedor">
                             <p>En <strong>Jhon Wings</strong> tenemos justo lo que necesitas para ese break perfecto o para compartir sin excusas. Nuestras alitas son jugosas, llenas de sabor y acompañadas de salsas que van desde lo clásico que amas hasta lo explosivo que te reta.</p>
@@ -100,9 +103,30 @@
                             <p><strong>Haz tu pedido y convierte cualquier momento en algo que valga totalmente la pena. Consulta cobertura de servicio a domicilio.</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container media-wings"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/ham1.png" alt="Promoción de alimentos de Jhon Wings" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                </div>
+                <div class="conexion-community-list" aria-label="Publicaciones comunitarias">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container menu-placeholder" role="img" aria-label="Imagen del menú de Guauffles pendiente">
+                        <span class="menu-placeholder__icon" aria-hidden="true">🧇</span>
+                        <span>Nuestro menú</span>
+                        <strong>Próximamente</strong>
+                    </div>
+                    <div class="texto_vendedor">
+                        <p class="card-label">Sabores</p>
+                        <h2 class="titulo_vendedor">Dulce, divertido y delicioso</h2>
+                        <div class="descripcion_vendedor">
+                            <p>En <strong>Guauffles</strong> encontrarás mini waffles, pancakes, botanas y slushies para disfrutar en cualquier momento. Descubre una variedad de opciones dulces y saladas, perfectas para consentirte, compartir con amigos o darte un gusto durante el día.</p>
+                            <p>Visítanos o llévanos a tus eventos favoritos y hagamos de cada ocasión un momento delicioso.</p>
+                            <ul class="contact-list">
+                                <li><span><i aria-hidden="true">📍</i> Ubicación</span><strong>Acanceh 573, Pedregal de San Nicolás 1ra Secc, Tlalpan, 14100, CDMX · Terraza BTD</strong></li>
+                            </ul>
+                            <p class="menu-pending"><strong>Nuestro menú:</strong> imagen pendiente.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container carousel-container--multiple media-galletas" data-carousel-status="1 / 2" role="region" aria-roledescription="carrusel" aria-label="Galería automática de galletas, 2 imágenes"><div class="carousel-track" tabindex="0"><figure class="carousel-slide"><img src="img/conexion/store2.webp" alt="Galletas chocochips con proteína" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store1.webp" alt="Información nutrimental de las galletas" loading="lazy"></figure></div><button class="carousel-control carousel-control--prev" type="button" aria-label="Ver imagen anterior de galletas">←</button><button class="carousel-control carousel-control--next" type="button" aria-label="Ver imagen siguiente de galletas">→</button></div>
                     <div class="texto_vendedor">
                         <p class="card-label">Nutrición</p>
                         <h2 class="titulo_vendedor">Convierte tu antojo en una experiencia deliciosa y nutritiva</h2>
@@ -113,9 +137,9 @@
                             <p><strong>¡Es momento de disfrutar sin culpa!</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container carousel-container--multiple media-galletas" aria-label="Galería de galletas; desliza para ver más"><div class="carousel-track" tabindex="0"><figure class="carousel-slide"><img src="img/conexion/store2.webp" alt="Galletas chocochips con proteína" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store1.webp" alt="Información nutrimental de las galletas" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container media-jardin"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/store6.webp" alt="Plantas y macetas de Penny's Garden" loading="lazy"></figure></div></div>
                     <div class="texto_vendedor">
                         <p class="card-label">Hogar y jardín</p>
                         <h2 class="titulo_vendedor">¡Dale vida a tu hogar con Penny's Garden!</h2>
@@ -125,9 +149,9 @@
                             <p><strong>¡Haz florecer tu mundo con nosotros!</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container media-jardin"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/store6.webp" alt="Plantas y macetas de Penny's Garden" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container carousel-container--multiple media-salsas" data-carousel-status="1 / 3" role="region" aria-roledescription="carrusel" aria-label="Galería automática de salsas, 3 imágenes"><div class="carousel-track" tabindex="0"><figure class="carousel-slide"><img src="img/conexion/store3.webp" alt="Salsa macha Fuego Nuestro, variedad uno" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store4.webp" alt="Salsa macha Fuego Nuestro, variedad dos" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store5.webp" alt="Salsa macha Fuego Nuestro, variedad tres" loading="lazy"></figure></div><button class="carousel-control carousel-control--prev" type="button" aria-label="Ver imagen anterior de salsas">←</button><button class="carousel-control carousel-control--next" type="button" aria-label="Ver imagen siguiente de salsas">→</button></div>
                     <div class="texto_vendedor">
                         <p class="card-label">Producto artesanal</p>
                         <h2 class="titulo_vendedor">¡Dale sabor a tus platillos con Fuego Nuestro!</h2>
@@ -138,9 +162,9 @@
                             <p><strong>¡El toque picante que tu vida necesita!</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container carousel-container--multiple media-salsas" aria-label="Galería de salsas; desliza para ver más"><div class="carousel-track" tabindex="0"><figure class="carousel-slide"><img src="img/conexion/store3.webp" alt="Salsa macha Fuego Nuestro, variedad uno" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store4.webp" alt="Salsa macha Fuego Nuestro, variedad dos" loading="lazy"></figure><figure class="carousel-slide"><img src="img/conexion/store5.webp" alt="Salsa macha Fuego Nuestro, variedad tres" loading="lazy"></figure></div></div>
                 </article>
-                <article class="bloque_vendedor">
+                <article class="bloque_vendedor bloque_vendedor--horizontal">
+                    <div class="carousel-container media-letreros"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/referencia.webp" alt="Ejemplo de letrero luminoso personalizado" loading="lazy"></figure></div></div>
                     <div class="texto_vendedor">
                         <p class="card-label">Diseño personalizado</p>
                         <h2 class="titulo_vendedor">Convierte cualquier lugar en una experiencia visual inolvidable</h2>
@@ -151,8 +175,8 @@
                             <p><strong>¡Es momento de brillar!</strong></p>
                         </div>
                     </div>
-                    <div class="carousel-container media-letreros"><div class="carousel-track"><figure class="carousel-slide"><img src="img/conexion/referencia.webp" alt="Ejemplo de letrero luminoso personalizado" loading="lazy"></figure></div></div>
                 </article>
+                </div>
                 <aside class="contact-card" aria-labelledby="contact-title">
                     <div><p class="card-label">Participa</p><h2 id="contact-title">Este espacio también es para ti</h2><p>Comunícate con nosotros si deseas promocionar algún proyecto o contenido propio.</p></div>
                     <div class="contact-card__links"><a href="mailto:comunicacion_interna@consar.gob.mx">comunicacion_interna@consar.gob.mx <span aria-hidden="true">→</span></a><a href="mailto:harista@consar.gob.mx">harista@consar.gob.mx <span aria-hidden="true">→</span></a></div>
@@ -172,7 +196,9 @@
             </div>
             <a class="footer__contact" href="mailto:comunicacion_interna@consar.gob.mx"><span>Te queremos escuchar</span><img class="icon--sobre" src="img/icons/sobre.svg" alt="" width="32" height="32"></a>
         </div>
+        <p class="footer__whatsapp-row">Sigue el canal de CONSAR en WhatsApp: <a href="https://whatsapp.com/channel/0029VbD3v7bCsU9HXTioib1q" target="_blank" rel="noopener noreferrer">https://whatsapp.com/channel/0029VbD3v7bCsU9HXTioib1q <span aria-hidden="true">↗</span></a></p>
     </footer>
     <script src="js/logica.js?v=20260821"></script>
+    <script src="js/conexion.js?v=20260825-2"></script>
 </body>
 </html>

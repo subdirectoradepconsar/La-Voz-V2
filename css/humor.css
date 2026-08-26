@@ -39,6 +39,11 @@
 .page-humor .navegacion { width: auto; padding: 0; border: 0; display: flex; justify-content: center; gap: clamp(.3rem, 1vw, 1.2rem); }
 .page-humor .navegacion__enlace { min-height: 4rem; padding: .9rem 1rem; border-radius: 999px; color: rgb(255 255 255 / 78%); font-family: var(--humor-font-body); font-size: 1.25rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; transition: color .2s ease, background-color .2s ease; }
 .page-humor .navegacion__enlace::after { display: none; }
+@media (hover: hover) and (pointer: fine) {
+    .page-humor .navegacion__enlace { position: relative; }
+    .page-humor .navegacion__enlace::after { content: ""; position: absolute; right: 1rem; bottom: .5rem; left: 1rem; display: block; width: auto; height: 2px; background: #fed7aa; border-radius: 99px; box-shadow: 0 0 .7rem rgb(254 215 170 / 72%); transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+    .page-humor .navegacion__enlace:hover::after, .page-humor .navegacion__enlace:focus-visible::after { right: 1rem; left: 1rem; width: auto; transform: scaleX(1); }
+}
 .page-humor .navegacion__enlace:hover { color: #fff; background: rgb(255 255 255 / 8%); }
 .page-humor .navegacion__enlace--activo { color: #fff; background: rgb(255 237 213 / 16%); }
 
@@ -61,12 +66,23 @@
 .contenedor__meme:hover .meme_img { transform: scale(1.03); }
 .contenedor__meme:hover .meme-card__overlay, .contenedor__meme:focus-visible .meme-card__overlay { opacity: 1; transform: translate(-50%, 0); }
 
+/* Video destacado */
+.humor-reel { margin-top: clamp(3.2rem, 6vw, 6rem); display: flex; justify-content: center; }
+.humor-reel .instagram-media { width: min(100%, 54rem) !important; min-width: 0 !important; margin: 0 auto !important; }
+.humor-reel iframe { max-width: 100% !important; }
+.humor-reel > blockquote > a { min-height: 24rem; padding: 2rem; display: flex; align-items: center; justify-content: center; color: var(--humor-orange-700); background: var(--humor-surface); border: 1px solid var(--humor-border); border-radius: var(--humor-radius); box-shadow: var(--humor-shadow); font-weight: 700; text-align: center; }
+.humor-reel > blockquote > a:hover { color: var(--humor-orange-900); border-color: #f3d7c7; }
+
 /* Visor ampliado */
 .modal-meme { position: fixed; inset: 0; z-index: 10000; width: 100vw; height: 100dvh; padding: 2rem; display: none; place-items: center; background: rgb(39 22 15 / 90%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); cursor: pointer; }
 .modal-meme.activo { display: grid; }
-.modal-meme__dialog { width: min(94vw, 1100px); max-height: 90dvh; padding: 1rem; display: grid; place-items: center; background: rgb(255 255 255 / 6%); border: 1px solid rgb(255 255 255 / 14%); border-radius: var(--humor-radius); box-shadow: 0 35px 90px rgb(0 0 0 / 65%); }
-.modal-meme__img { max-width: 100%; max-height: calc(90dvh - 2rem); object-fit: contain; background: #fff; border-radius: 1rem; cursor: default; }
-.modal-meme__cerrar { position: absolute; top: 1.8rem; right: 2.2rem; z-index: 1; width: 4.4rem; height: 4.4rem; padding: 0; color: #fff; background: rgb(143 53 16 / 88%); border: 1px solid rgb(255 255 255 / 20%); border-radius: 50%; cursor: pointer; font-size: 3rem; line-height: 1; transition: background-color .2s ease, transform .2s ease; }
+.modal-meme__dialog { width: min(94vw, 1100px); max-height: 90dvh; padding: 1rem; display: grid; grid-template-rows: minmax(0, 1fr) auto; place-items: center; background: rgb(255 255 255 / 6%); border: 1px solid rgb(255 255 255 / 14%); border-radius: var(--humor-radius); box-shadow: 0 35px 90px rgb(0 0 0 / 65%); }
+.modal-meme__img { min-height: 0; max-width: 100%; max-height: calc(90dvh - 8rem); object-fit: contain; background: #fff; border-radius: 1rem; cursor: default; }
+.modal-meme__instagram { max-width: 100%; min-height: 4.4rem; margin-top: 1.2rem; padding: .9rem 1.7rem; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; color: #fff; background: linear-gradient(135deg, var(--humor-orange-900), var(--humor-orange-500)); border: 1px solid rgb(255 255 255 / 18%); border-radius: 9999px; box-shadow: 0 12px 26px rgb(39 22 15 / 28%); font-family: var(--humor-font-body); font-size: 1.25rem; font-weight: 700; line-height: 1.25; text-align: center; text-decoration: none; cursor: pointer; transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease; }
+.modal-meme__instagram:hover { color: #fff; opacity: .92; transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 30px rgb(39 22 15 / 34%); }
+.modal-meme__instagram:focus-visible { outline: 3px solid var(--humor-orange-100); outline-offset: 3px; }
+.modal-meme__cerrar { position: absolute; top: 1.8rem; right: 2.2rem; z-index: 1; width: 4.4rem; height: 4.4rem; padding: 0; display: grid; place-items: center; color: #fff; background: rgb(143 53 16 / 88%); border: 1px solid rgb(255 255 255 / 20%); border-radius: 50%; cursor: pointer; font-size: 3rem; line-height: 1; transition: background-color .2s ease, transform .2s ease; }
+.modal-meme__cerrar span { display: block; line-height: 1; transform: translateY(-.35rem); }
 .modal-meme__cerrar:hover { background: var(--humor-orange-700); transform: scale(1.05); }
 
 /* Pie claro y discreto */
@@ -110,6 +126,9 @@
     .meme-card { padding: .8rem; }
     .modal-meme { padding: 1rem; }
     .modal-meme__cerrar { top: 1rem; right: 1rem; }
+    .modal-meme__dialog { width: 100%; padding: .8rem; }
+    .modal-meme__img { max-height: calc(100dvh - 10rem); }
+    .modal-meme__instagram { width: 100%; min-height: 4rem; margin-top: 1rem; padding: .8rem 1.2rem; font-size: 1.15rem; }
 }
 @media (prefers-reduced-motion: reduce) {
     .page-humor *, .page-humor *::before, .page-humor *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
