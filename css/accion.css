@@ -124,6 +124,7 @@ body.page-accion {
 .action-copy { min-width: 0; }
 .action-copy p { margin: 0 0 1.5rem; color: var(--action-body); font-size: clamp(1rem,.97rem + .18vw,1.08rem); line-height: 1.82; text-wrap: pretty; }
 .action-copy > .action-lead { color: var(--action-muted); font-size: 1.125rem; line-height: 1.8; }
+.action-copy > .action-lead::first-letter { float: left; margin: .08em .12em 0 0; color: var(--action-wine-light); font-family: "Outfit", sans-serif; font-size: 3.6em; font-weight: 700; line-height: .78; }
 .action-copy p:last-child { margin-bottom: 0; }
 .action-copy strong { color: #243047; font-weight: 700; }
 
@@ -195,7 +196,7 @@ body.page-accion { font-size: 1.2rem; line-height: 1.8; }
 .action-article__header h1 { max-width: 1080px; font-size: clamp(2.3rem, 3.2vw, 2.8rem); }
 .action-deck { font-size: 1.1rem; }
 .action-copy p { font-size: clamp(1.15rem, 1.1rem + .22vw, 1.25rem); line-height: 1.82; }
-.action-copy > .action-lead { font-size: 1.125rem; line-height: 1.8; }
+.action-copy > .action-lead { font-size: clamp(1.15rem, 1.1rem + .22vw, 1.25rem); line-height: 1.82; }
 .action-stat span { font-size: 1.75rem; line-height: 1.7; }
 .action-summary p { font-size: 1.75rem; line-height: 1.75; }
 .action-media-card h2 { font-size: 1.55rem; }

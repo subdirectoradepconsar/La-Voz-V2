@@ -67,7 +67,7 @@
 .contenedor__meme:hover .meme-card__overlay, .contenedor__meme:focus-visible .meme-card__overlay { opacity: 1; transform: translate(-50%, 0); }
 
 /* Video destacado */
-.humor-reel { margin-top: clamp(3.2rem, 6vw, 6rem); display: flex; justify-content: center; }
+.humor-reel { margin: 0 auto clamp(3.2rem, 6vw, 6rem); display: flex; justify-content: center; }
 .humor-reel .instagram-media { width: min(100%, 54rem) !important; min-width: 0 !important; margin: 0 auto !important; }
 .humor-reel iframe { max-width: 100% !important; }
 .humor-reel > blockquote > a { min-height: 24rem; padding: 2rem; display: flex; align-items: center; justify-content: center; color: var(--humor-orange-700); background: var(--humor-surface); border: 1px solid var(--humor-border); border-radius: var(--humor-radius); box-shadow: var(--humor-shadow); font-weight: 700; text-align: center; }
