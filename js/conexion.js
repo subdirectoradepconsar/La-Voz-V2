@@ -1,7 +1,35 @@
 (() => {
     const AUTOPLAY_DELAY = 5000;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaContainers = document.querySelectorAll('.carousel-container');
     const carousels = document.querySelectorAll('.carousel-container--multiple');
+
+    const updateMediaAspect = (carousel, slide) => {
+        const image = slide?.querySelector('img');
+        if (!image) return;
+
+        const applyAspect = () => {
+            const customAspect = Number.parseFloat(slide.dataset.mediaAspect);
+            const imageAspect = image.naturalWidth / image.naturalHeight;
+            const aspect = Number.isFinite(customAspect) && customAspect > 0
+                ? customAspect
+                : imageAspect;
+
+            if (Number.isFinite(aspect) && aspect > 0) {
+                carousel.style.setProperty('--media-aspect', aspect);
+            }
+        };
+
+        if (image.complete && image.naturalWidth > 0) {
+            applyAspect();
+        } else {
+            image.addEventListener('load', applyAspect, { once: true });
+        }
+    };
+
+    mediaContainers.forEach((carousel) => {
+        updateMediaAspect(carousel, carousel.querySelector('.carousel-slide'));
+    });
 
     carousels.forEach((carousel) => {
         const track = carousel.querySelector('.carousel-track');
@@ -14,6 +42,8 @@
         let activeIndex = 0;
         let timerId = null;
         let scrollFrame = null;
+        let programmaticScrollTimer = null;
+        let isProgrammaticScroll = false;
         let isVisible = !('IntersectionObserver' in window);
         let isKeyboardFocused = false;
         let isPointerDown = false;
@@ -48,10 +78,21 @@
         const showSlide = (requestedIndex) => {
             activeIndex = (requestedIndex + slides.length) % slides.length;
             updateStatus();
+
+            if (programmaticScrollTimer !== null) {
+                window.clearTimeout(programmaticScrollTimer);
+            }
+            isProgrammaticScroll = true;
             track.scrollTo({
                 left: activeIndex * track.clientWidth,
                 behavior: reducedMotion.matches ? 'auto' : 'smooth'
             });
+
+            programmaticScrollTimer = window.setTimeout(() => {
+                programmaticScrollTimer = null;
+                isProgrammaticScroll = false;
+                syncActiveSlide();
+            }, reducedMotion.matches ? 0 : 500);
             scheduleAutoplay();
         };
 
@@ -75,6 +116,7 @@
         });
 
         track.addEventListener('scroll', () => {
+            if (isProgrammaticScroll) return;
             if (scrollFrame !== null) window.cancelAnimationFrame(scrollFrame);
             scrollFrame = window.requestAnimationFrame(() => {
                 scrollFrame = null;
@@ -96,6 +138,11 @@
         });
 
         carousel.addEventListener('pointerdown', () => {
+            if (programmaticScrollTimer !== null) {
+                window.clearTimeout(programmaticScrollTimer);
+                programmaticScrollTimer = null;
+            }
+            isProgrammaticScroll = false;
             isPointerDown = true;
             stopAutoplay();
         }, { passive: true });
