@@ -197,7 +197,7 @@ body.page-accion { font-size: 1.2rem; line-height: 1.8; }
 .action-deck { font-size: 1.1rem; }
 .action-copy p { font-size: clamp(1.15rem, 1.1rem + .22vw, 1.25rem); line-height: 1.82; }
 .action-copy > .action-lead { font-size: clamp(1.15rem, 1.1rem + .22vw, 1.25rem); line-height: 1.82; }
-.action-stat span { font-size: 1.75rem; line-height: 1.7; }
+.action-stat span { font-size: clamp(1.32rem, 1.26rem + .2vw, 1.45rem); line-height: 1.6; }
 .action-summary p { font-size: 1.75rem; line-height: 1.75; }
 .action-media-card h2 { font-size: 1.55rem; }
 .action-media-card__content > p:not(.action-media-card__badge) { font-size: 1rem; }
