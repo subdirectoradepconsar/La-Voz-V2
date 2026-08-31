@@ -23,7 +23,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css?v=20260825-2">
-    <link rel="stylesheet" href="css/a_tiempo_libre.css?v=20260828-4">
+    <link rel="stylesheet" href="css/a_tiempo_libre.css?v=20260831-1">
 </head>
 
 <body class="page-tiempo">
@@ -78,8 +78,8 @@
 
             <div class="leisure-grid" aria-label="Recomendaciones culturales">
                 <article class="leisure-card leisure-card--literature">
-                    <div class="leisure-card__media"><img class="leisure-card__image leisure-card__image--contain"
-                            src="img/tiempo_libre/almendra.webp" alt="Portada del libro Almendra, de Won-pyung Sohn"
+                    <div class="leisure-card__media"><img class="leisure-card__image"
+                            src="img/tiempo_libre/almendra-horizontal.png" alt="Portada del libro Almendra, de Won-pyung Sohn"
                             loading="lazy"></div>
                     <div class="leisure-card__body">
                         <div class="leisure-card__category-row"><span
@@ -100,8 +100,8 @@
                 </article>
 
                 <article class="leisure-card leisure-card--podcast">
-                    <div class="leisure-card__media"><img class="leisure-card__image leisure-card__image--contain"
-                            src="img/tiempo_libre/educa-tu-dinero.jpg" alt="Portada del podcast Educa tu dinero"
+                    <div class="leisure-card__media"><img class="leisure-card__image"
+                            src="img/tiempo_libre/educa-tu-dinero-horizontal.png" alt="Portada del podcast Educa tu dinero"
                             loading="lazy">
                     </div>
                     <div class="leisure-card__body">
@@ -148,12 +148,6 @@
                         <p class="events-showcase__eyebrow">Agenda para disfrutar</p>
                         <h2 id="events-title">Eventos y salidas</h2>
                     </div>
-                    <div class="events-showcase__controls" aria-label="Controles del carrusel">
-                        <button class="events-control events-control--prev" type="button"
-                            aria-label="Ver evento anterior">←</button>
-                        <button class="events-control events-control--next" type="button"
-                            aria-label="Ver evento siguiente">→</button>
-                    </div>
                 </div>
 
                 <svg class="leisure-icon-sprite" aria-hidden="true">
@@ -179,8 +173,7 @@
                     tabindex="0">
                     <div class="events-track">
                         <article class="event-slide" aria-label="1 de 3">
-                            <button class="event-slide__media event-slide__media--gallery" type="button"
-                                aria-label="Mostrar el siguiente evento">
+                            <div class="event-slide__media event-slide__media--gallery">
                                 <span class="event-slide__gallery">
                                     <img class="event-slide__gallery-image event-slide__gallery-image--poster"
                                         src="img/tiempo_libre/interestelar-cartel.jpg"
@@ -189,10 +182,10 @@
                                         src="img/tiempo_libre/interestelar-concierto.jpg"
                                         alt="Escenas de Interestelar y una orquesta sinfónica en concierto" loading="lazy">
                                 </span>
-                                <span>Desliza o haz clic <b aria-hidden="true">→</b></span>
-                            </button>
+                                <span class="event-slide__swipe-hint">Desliza <b aria-hidden="true">↔</b></span>
+                            </div>
                             <div class="event-slide__body">
-                                <span class="leisure-category leisure-category--event">Evento CDMX</span>
+                                <span class="leisure-category leisure-category--event">Concierto</span>
                                 <h3>Interestelar 12° Aniversario Movie Concert</h3>
                                 <p>Una experiencia que combina la proyección de Interestelar con música en vivo para
                                     volver a vivir una de las películas de ciencia ficción más memorables.</p>
@@ -205,8 +198,7 @@
                         </article>
 
                         <article class="event-slide" aria-label="2 de 3" aria-hidden="true">
-                            <button class="event-slide__media event-slide__media--gallery" type="button"
-                                aria-label="Mostrar el siguiente evento">
+                            <div class="event-slide__media event-slide__media--gallery">
                                 <span class="event-slide__gallery">
                                     <img class="event-slide__gallery-image event-slide__gallery-image--poster"
                                         src="img/tiempo_libre/monopoly-experiencia-horizontal-v2.jpg"
@@ -215,10 +207,10 @@
                                         src="img/tiempo_libre/monopoly-billete-horizontal.jpg"
                                         alt="Visitante sosteniendo un billete gigante de 500 de Monopoly" width="681" height="450" loading="lazy">
                                 </span>
-                                <span>Desliza o haz clic <b aria-hidden="true">→</b></span>
-                            </button>
+                                <span class="event-slide__swipe-hint">Desliza <b aria-hidden="true">↔</b></span>
+                            </div>
                             <div class="event-slide__body">
-                                <span class="leisure-category leisure-category--culture">Cultura</span>
+                                <span class="leisure-category leisure-category--culture">Evento</span>
                                 <h3>Experiencia de Monopoly</h3>
                                 <p>Vive una partida de Monopoly a gran escala con retos físicos, acertijos y pruebas de
                                     estrategia. Una experiencia para
@@ -232,16 +224,15 @@
                         </article>
 
                         <article class="event-slide" aria-label="3 de 3" aria-hidden="true">
-                            <button class="event-slide__media event-slide__media--poster" type="button"
-                                aria-label="Mostrar el siguiente evento">
+                            <div class="event-slide__media event-slide__media--poster">
                                 <img src="img/tiempo_libre/feria-cafe-chocolate.jpeg"
                                     alt="Cartel de la Feria Artesanal del Café y Chocolate en Coyoacán" loading="lazy">
-                                <span>Desliza o haz clic <b aria-hidden="true">→</b></span>
-                            </button>
+                                <span class="event-slide__swipe-hint">Desliza <b aria-hidden="true">↔</b></span>
+                            </div>
                             <div class="event-slide__body">
-                                <span class="leisure-category leisure-category--music">Música</span>
+                                <span class="leisure-category leisure-category--music">Evento</span>
                                 <h3>Feria Artesanal del Café y Chocolate</h3>
-                                <p>Disfruta café artesanal, chocolate, postres y productos de distintas regiones de
+                                <p>Disfruta de café artesanal, chocolate, postres y productos de distintas regiones de
                                     México, acompañados de artesanías y
                                     música en vivo.</p>
                                 <ul class="leisure-details">
@@ -251,6 +242,12 @@
                                 </ul>
                             </div>
                         </article>
+                    </div>
+                    <div class="events-showcase__controls" aria-label="Controles del carrusel">
+                        <button class="events-control events-control--prev" type="button"
+                            aria-label="Ver evento anterior">←</button>
+                        <button class="events-control events-control--next" type="button"
+                            aria-label="Ver evento siguiente">→</button>
                     </div>
                 </div>
 
@@ -293,7 +290,7 @@
     </footer>
 
     <script src="js/logica.js"></script>
-    <script src="js/tiempo_libre.js?v=20260824"></script>
+    <script src="js/tiempo_libre.js?v=20260831-2"></script>
 </body>
 
 </html>

@@ -9,9 +9,10 @@
 
     if (!carousel || !track || slides.length === 0) return;
 
+    const autoplayDelay = 7000;
     let current = 0;
     let pointerStart = null;
-    let suppressClick = false;
+    let autoplayTimer = null;
 
     const showSlide = (index) => {
         current = (index + slides.length) % slides.length;
@@ -33,23 +34,42 @@
         if (status) status.textContent = `Evento ${current + 1} de ${slides.length}`;
     };
 
-    previous?.addEventListener("click", () => showSlide(current - 1));
-    next?.addEventListener("click", () => showSlide(current + 1));
-    dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
-    document.querySelectorAll(".event-slide__media").forEach((media) => media.addEventListener("click", (event) => {
-        if (suppressClick) {
-            event.preventDefault();
-            return;
-        }
-        showSlide(current + 1);
-    }));
+    const scheduleAutoplay = () => {
+        window.clearTimeout(autoplayTimer);
+        if (document.hidden) return;
+        autoplayTimer = window.setTimeout(() => {
+            showSlide(current + 1);
+            scheduleAutoplay();
+        }, autoplayDelay);
+    };
+
+    const navigateTo = (index) => {
+        showSlide(index);
+        scheduleAutoplay();
+    };
+
+    const stopControlPointer = (event) => event.stopPropagation();
+    previous?.addEventListener("pointerdown", stopControlPointer);
+    next?.addEventListener("pointerdown", stopControlPointer);
+    previous?.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        navigateTo(current - 1);
+    });
+    next?.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        navigateTo(current + 1);
+    });
+    dots.forEach((dot, index) => dot.addEventListener("click", () => navigateTo(index)));
 
     carousel.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowLeft") showSlide(current - 1);
-        if (event.key === "ArrowRight") showSlide(current + 1);
+        if (event.key === "ArrowLeft") navigateTo(current - 1);
+        if (event.key === "ArrowRight") navigateTo(current + 1);
     });
 
     carousel.addEventListener("pointerdown", (event) => {
+        if (event.target.closest(".events-control")) return;
         pointerStart = event.clientX;
         carousel.setPointerCapture?.(event.pointerId);
     });
@@ -59,11 +79,11 @@
         const distance = event.clientX - pointerStart;
         pointerStart = null;
         if (Math.abs(distance) < 45) return;
-        suppressClick = true;
-        showSlide(current + (distance < 0 ? 1 : -1));
-        window.setTimeout(() => { suppressClick = false; }, 0);
+        navigateTo(current + (distance < 0 ? 1 : -1));
     });
 
     carousel.addEventListener("pointercancel", () => { pointerStart = null; });
+    document.addEventListener("visibilitychange", scheduleAutoplay);
     showSlide(0);
+    scheduleAutoplay();
 })();
