@@ -63,11 +63,12 @@
 .birthday-card[data-area="administracion"], .filter-pill[data-filter="administracion"] { --area: #e11d48; --area-rgb: 225 29 72; }
 .birthday-card[data-area="operaciones"], .filter-pill[data-filter="operaciones"] { --area: #7c3aed; --area-rgb: 124 58 237; }
 .birthday-card[data-area="financiera"], .filter-pill[data-filter="financiera"] { --area: #0891b2; --area-rgb: 8 145 178; }
+.birthday-card[data-area="estudios"], .filter-pill[data-filter="estudios"] { --area: #d97706; --area-rgb: 217 119 6; }
 
 .birthday-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
 .filter-pill { --area: var(--area-neutral); --area-rgb: var(--area-neutral-rgb); min-height: 4rem; padding: .75rem 1.25rem; display: inline-flex; align-items: center; gap: .75rem; color: #475569; background: #fff; border: 1px solid var(--birthday-border); border-radius: 999px; cursor: pointer; font-size: 1.15rem; font-weight: 700; line-height: 1.2; white-space: nowrap; transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 .filter-pill::before { content: ""; flex: 0 0 .8rem; width: .8rem; height: .8rem; background: var(--area); border-radius: 50%; box-shadow: 0 0 0 3px rgb(var(--area-rgb) / 11%); }
-.filter-pill[data-filter="todos"]::before { background: conic-gradient(#2563eb 0 20%,#059669 0 40%,#e11d48 0 60%,#7c3aed 0 80%,#0891b2 0); }
+.filter-pill[data-filter="todos"]::before { background: conic-gradient(#2563eb 0 16.67%,#059669 0 33.33%,#e11d48 0 50%,#7c3aed 0 66.67%,#0891b2 0 83.33%,#d97706 0); }
 .filter-pill:hover { color: var(--area); border-color: rgb(var(--area-rgb) / 35%); background: rgb(var(--area-rgb) / 4%); transform: translateY(-1px); }
 .filter-pill.is-active { color: var(--area); background: rgb(var(--area-rgb) / 9%); border-color: rgb(var(--area-rgb) / 35%); box-shadow: 0 5px 14px rgb(var(--area-rgb) / 9%); }
 .filter-pill.is-active[data-filter="todos"] { color: var(--birthday-primary); background: var(--birthday-primary-soft); border-color: rgb(var(--birthday-primary-rgb) / 32%); }
