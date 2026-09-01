@@ -58,12 +58,12 @@
 .birthday-search input::placeholder { color: #94a3b8; opacity: 1; }
 
 /* Colores oficiales por subárea */
-.birthday-card[data-area="juridica"], .filter-pill[data-filter="juridica"] { --area: #2563eb; --area-rgb: 37 99 235; }
-.birthday-card[data-area="informacion"], .filter-pill[data-filter="informacion"] { --area: #059669; --area-rgb: 5 150 105; }
-.birthday-card[data-area="administracion"], .filter-pill[data-filter="administracion"] { --area: #e11d48; --area-rgb: 225 29 72; }
-.birthday-card[data-area="operaciones"], .filter-pill[data-filter="operaciones"] { --area: #7c3aed; --area-rgb: 124 58 237; }
-.birthday-card[data-area="financiera"], .filter-pill[data-filter="financiera"] { --area: #0891b2; --area-rgb: 8 145 178; }
-.birthday-card[data-area="estudios"], .filter-pill[data-filter="estudios"] { --area: #d97706; --area-rgb: 217 119 6; }
+.birthday-card[data-area="juridica"], .filter-pill[data-filter="juridica"] { --area: #2563eb; --area-rgb: 37 99 235; --area-gradient: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.birthday-card[data-area="informacion"], .filter-pill[data-filter="informacion"] { --area: #059669; --area-rgb: 5 150 105; --area-gradient: linear-gradient(135deg, #10b981, #047857); }
+.birthday-card[data-area="administracion"], .filter-pill[data-filter="administracion"] { --area: #e11d48; --area-rgb: 225 29 72; --area-gradient: linear-gradient(135deg, #f43f5e, #be123c); }
+.birthday-card[data-area="operaciones"], .filter-pill[data-filter="operaciones"] { --area: #7c3aed; --area-rgb: 124 58 237; --area-gradient: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.birthday-card[data-area="financiera"], .filter-pill[data-filter="financiera"] { --area: #0891b2; --area-rgb: 8 145 178; --area-gradient: linear-gradient(135deg, #06b6d4, #0e7490); }
+.birthday-card[data-area="estudios"], .filter-pill[data-filter="estudios"] { --area: #d97706; --area-rgb: 217 119 6; --area-gradient: linear-gradient(135deg, #f59e0b, #b45309); }
 
 .birthday-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
 .filter-pill { --area: var(--area-neutral); --area-rgb: var(--area-neutral-rgb); min-height: 4rem; padding: .75rem 1.25rem; display: inline-flex; align-items: center; gap: .75rem; color: #475569; background: #fff; border: 1px solid var(--birthday-border); border-radius: 999px; cursor: pointer; font-size: 1.15rem; font-weight: 700; line-height: 1.2; white-space: nowrap; transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
@@ -72,6 +72,10 @@
 .filter-pill:hover { color: var(--area); border-color: rgb(var(--area-rgb) / 35%); background: rgb(var(--area-rgb) / 4%); transform: translateY(-1px); }
 .filter-pill.is-active { color: var(--area); background: rgb(var(--area-rgb) / 9%); border-color: rgb(var(--area-rgb) / 35%); box-shadow: 0 5px 14px rgb(var(--area-rgb) / 9%); }
 .filter-pill.is-active[data-filter="todos"] { color: var(--birthday-primary); background: var(--birthday-primary-soft); border-color: rgb(var(--birthday-primary-rgb) / 32%); }
+.filter-pill:not([data-filter="todos"]),
+.filter-pill:not([data-filter="todos"]):hover,
+.filter-pill:not([data-filter="todos"]).is-active { color: #fff; background: var(--area-gradient); border-color: transparent; }
+.filter-pill:not([data-filter="todos"])::before { background: #fff; box-shadow: 0 0 0 3px rgb(255 255 255 / 14%); }
 .birthday-results { margin: 0 0 1.4rem; color: var(--birthday-muted); font-size: 1.2rem; font-weight: 600; text-align: right; }
 
 /* Tarjetas */
