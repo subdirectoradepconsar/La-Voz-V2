@@ -146,15 +146,15 @@
     .compass-aside { position: static; width: min(100%, 52rem); margin: 0 auto; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .compass-article, .page-brujula .footer__inner { width: min(calc(100% - 2.4rem), var(--compass-container)); }
     .page-brujula .header { min-height: 6.4rem; }
     .page-brujula .header__container { position: relative; width: calc(100% - 2.4rem); min-height: 6.4rem; display: flex; flex-direction: row; justify-content: space-between; }
     .page-brujula .header__logo--img { width: 12.8rem; }
-    .page-brujula .hamburger { position: static; width: 4rem; height: 4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 8%); border-radius: .8rem; }
+    .page-brujula .hamburger { position: static; width: 4.4rem; height: 4.4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 8%); border-radius: .8rem; }
     .page-brujula .hamburger span { width: 2.2rem; height: 2px; background: #fff; }
     .page-brujula .navegacion { position: absolute; top: 100%; left: -1.2rem; width: calc(100% + 2.4rem); max-height: 0; padding: 0 1.2rem; display: grid; gap: .4rem; overflow: hidden; visibility: hidden; opacity: 0; background: var(--compass-deep); border-top: 1px solid rgb(255 255 255 / 10%); box-shadow: 0 12px 24px rgb(15 23 42 / 18%); transition: max-height .3s ease, opacity .2s ease, padding .3s ease, visibility .3s; }
-    .page-brujula .navegacion--active { max-height: 48rem; padding: 1.2rem; visibility: visible; opacity: 1; }
+    .page-brujula .navegacion.navegacion--active { max-height: calc(100vh - 6.4rem); max-height: calc(100dvh - 6.4rem); padding: 1.2rem; overflow-y: auto; overscroll-behavior: contain; visibility: visible; opacity: 1; }
     .page-brujula .navegacion__enlace { width: 100%; min-height: 4.4rem; justify-content: flex-start; padding: 1rem 1.2rem; font-size: 1.25rem; }
     .compass-article__header { padding: 1.4rem 0 1.2rem; text-align: left; }
     .compass-article h1 { margin-inline: 0; font-size: clamp(2.5rem, 8vw, 3rem); }

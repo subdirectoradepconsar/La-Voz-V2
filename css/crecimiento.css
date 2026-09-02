@@ -105,15 +105,15 @@
     .editorial-card { position: static; }
     .editorial-figure img { max-height: 34rem; }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .growth-container { width: min(calc(100% - 2.4rem), var(--growth-container)); }
     .page-crecimiento .header { min-height: 6.4rem; }
     .page-crecimiento .header__container { position: relative; width: calc(100% - 2.4rem); min-height: 6.4rem; display: flex; flex-direction: row; justify-content: space-between; }
     .page-crecimiento .header__logo--img { width: 12.8rem; }
-    .page-crecimiento .hamburger { position: static; width: 4rem; height: 4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 10%); border-radius: .8rem; }
+    .page-crecimiento .hamburger { position: static; width: 4.4rem; height: 4.4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 10%); border-radius: .8rem; }
     .page-crecimiento .hamburger span { width: 2.2rem; height: 2px; background: #fff; }
     .page-crecimiento .navegacion { position: absolute; top: 100%; left: -1.2rem; width: calc(100% + 2.4rem); max-height: 0; padding: 0 1.2rem; display: grid; gap: .4rem; overflow: hidden; visibility: hidden; opacity: 0; background: var(--growth-header); border-top: 1px solid rgb(23 59 33 / 10%); box-shadow: 0 12px 24px rgb(var(--growth-primary-rgb) / 20%); transition: max-height .3s ease, opacity .2s ease, padding .3s ease, visibility .3s; }
-    .page-crecimiento .navegacion--active { max-height: 48rem; padding: 1.2rem; visibility: visible; opacity: 1; }
+    .page-crecimiento .navegacion.navegacion--active { max-height: calc(100vh - 6.4rem); max-height: calc(100dvh - 6.4rem); padding: 1.2rem; overflow-y: auto; overscroll-behavior: contain; visibility: visible; opacity: 1; }
     .page-crecimiento .navegacion__enlace { width: 100%; min-height: 4.4rem; justify-content: flex-start; padding: 1rem 1.2rem; font-size: 1.25rem; }
     .growth-main { padding-top: 3.2rem; }
     .editorial-card__content { padding: 2.4rem 2rem 1.4rem; }

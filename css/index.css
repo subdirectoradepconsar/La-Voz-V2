@@ -128,14 +128,14 @@ img { max-width: 100%; }
     .hero-visual--toy { grid-area: toy; transform: none; }
     .hero-visual--character img, .hero-visual--toy img { max-height: 25rem; width: auto; }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .header { min-height: 6.4rem; }
     .header__container { position: relative; width: calc(100% - 2.4rem); min-height: 6.4rem; display: flex; justify-content: space-between; }
     .header__logo--img { width: 12.8rem; }
-    .hamburger { position: static; width: 4rem; height: 4rem; padding: .8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: rgb(255 255 255 / 7%); border: 0; border-radius: .8rem; cursor: pointer; }
+    .hamburger { position: static; width: 4.4rem; height: 4.4rem; padding: .8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: rgb(255 255 255 / 7%); border: 0; border-radius: .8rem; cursor: pointer; }
     .hamburger span { width: 2.2rem; height: 2px; display: block; background: #fff; border-radius: 2px; }
     .navegacion { position: absolute; top: 100%; left: -1.2rem; width: calc(100% + 2.4rem); max-height: 0; padding: 0 1.2rem; display: grid; gap: .4rem; overflow: hidden; visibility: hidden; opacity: 0; background: var(--index-navy); border-top: 1px solid rgb(255 255 255 / 9%); box-shadow: 0 14px 28px rgb(8 25 45 / 22%); transition: max-height .3s ease, opacity .2s ease, padding .3s ease, visibility .3s; }
-    .navegacion--active { max-height: 48rem; padding: 1.2rem; visibility: visible; opacity: 1; }
+    .navegacion.navegacion--active { max-height: calc(100vh - 6.4rem); max-height: calc(100dvh - 6.4rem); padding: 1.2rem; overflow-y: auto; overscroll-behavior: contain; visibility: visible; opacity: 1; }
     .navegacion__enlace { width: 100%; min-height: 4.4rem; justify-content: flex-start; padding: 1rem 1.2rem; font-size: 1.2rem; }
     .navegacion__enlace::after { display: none; }
     .main-content { padding: 2rem 1.2rem 3rem; }
@@ -148,6 +148,10 @@ img { max-width: 100%; }
     .birthday-cta { font-size: 1.2rem; }
     .birthday-cta__icon { display: none; }
     .footer__inner { flex-direction: column; }
+}
+@media (max-width: 360px) {
+    .hero-showcase { padding-inline: 1rem; }
+    .hero-copy h1 { font-size: clamp(4.4rem, 15vw, 5.4rem); }
 }
 @media (prefers-reduced-motion: reduce) {
     .page-index *, .page-index *::before, .page-index *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

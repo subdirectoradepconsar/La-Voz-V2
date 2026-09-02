@@ -105,15 +105,15 @@
     .page-cumpleanos .header__topbar { display: none; }
     .page-cumpleanos .navegacion__enlace { padding-inline: .7rem; font-size: 1.1rem; }
 }
-@media (max-width:767px) {
+@media (max-width:768px) {
     .birthday-shell { width: min(calc(100% - 2.4rem),var(--birthday-container)); }
     .page-cumpleanos .header { min-height: 6.4rem; }
     .page-cumpleanos .header__container { position: relative; width: calc(100% - 2.4rem); min-height: 6.4rem; display: flex; flex-direction: row; justify-content: space-between; }
     .page-cumpleanos .header__logo--img { width: 12.8rem; }
-    .page-cumpleanos .hamburger { position: static; width: 4rem; height: 4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 7%); border-radius: .8rem; }
+    .page-cumpleanos .hamburger { position: static; width: 4.4rem; height: 4.4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 7%); border-radius: .8rem; }
     .page-cumpleanos .hamburger span { width: 2.2rem; height: 2px; background: #fff; }
     .page-cumpleanos .navegacion { position: absolute; top: 100%; left: -1.2rem; width: calc(100% + 2.4rem); max-height: 0; padding: 0 1.2rem; display: grid; gap: .4rem; overflow: hidden; visibility: hidden; opacity: 0; background: var(--birthday-primary); border-top: 1px solid rgb(255 255 255 / 12%); box-shadow: 0 14px 28px rgb(var(--birthday-primary-rgb) / 24%); transition: max-height .3s ease, opacity .2s ease, padding .3s ease, visibility .3s; }
-    .page-cumpleanos .navegacion--active { max-height: 48rem; padding: 1.2rem; visibility: visible; opacity: 1; }
+    .page-cumpleanos .navegacion.navegacion--active { max-height: calc(100vh - 6.4rem); max-height: calc(100dvh - 6.4rem); padding: 1.2rem; overflow-y: auto; overscroll-behavior: contain; visibility: visible; opacity: 1; }
     .page-cumpleanos .navegacion__enlace { width: 100%; min-height: 4.4rem; justify-content: flex-start; padding: 1rem 1.2rem; font-size: 1.2rem; }
     .birthday-main { padding-top: 3.2rem; }
     .birthday-heading { margin-bottom: 2.4rem; }
@@ -127,6 +127,7 @@
     .birthday-card { min-height: 18rem; display: grid; grid-template-columns: 8.2rem minmax(0,1fr); align-items: center; gap: 1.6rem; text-align: left; }
     .birthday-avatar { width: 8.2rem; height: 8.2rem; margin: 0; border-radius: 2rem; }
     .birthday-card__body { align-items: flex-start; }
+    .birthday-date { position: static; align-self: flex-end; margin: 0 0 .5rem; }
     .birthday-card p { margin-top: .2rem; text-align: left; }
 }
 @media (prefers-reduced-motion:reduce) {

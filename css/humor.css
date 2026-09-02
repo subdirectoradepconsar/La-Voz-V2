@@ -101,15 +101,15 @@
     .humor-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .meme-card:last-child { grid-column: 1 / -1; width: min(100%, 42rem); justify-self: center; }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .humor-container { width: min(calc(100% - 2.4rem), var(--humor-container)); }
     .page-humor .header { min-height: 6.4rem; }
     .page-humor .header__container { position: relative; width: calc(100% - 2.4rem); min-height: 6.4rem; display: flex; flex-direction: row; justify-content: space-between; }
     .page-humor .header__logo--img { width: 12.8rem; }
-    .page-humor .hamburger { position: static; width: 4rem; height: 4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 8%); border-radius: .8rem; }
+    .page-humor .hamburger { position: static; width: 4.4rem; height: 4.4rem; padding: .8rem; display: flex; align-items: center; justify-content: center; background: rgb(255 255 255 / 8%); border-radius: .8rem; }
     .page-humor .hamburger span { width: 2.2rem; height: 2px; background: #fff; }
     .page-humor .navegacion { position: absolute; top: 100%; left: -1.2rem; width: calc(100% + 2.4rem); max-height: 0; padding: 0 1.2rem; display: grid; gap: .4rem; overflow: hidden; visibility: hidden; opacity: 0; background: #a84316; border-top: 1px solid rgb(255 255 255 / 12%); box-shadow: 0 12px 24px rgb(91 36 12 / 20%); transition: max-height .3s ease, opacity .2s ease, padding .3s ease, visibility .3s; }
-    .page-humor .navegacion--active { max-height: 48rem; padding: 1.2rem; visibility: visible; opacity: 1; }
+    .page-humor .navegacion.navegacion--active { max-height: calc(100vh - 6.4rem); max-height: calc(100dvh - 6.4rem); padding: 1.2rem; overflow-y: auto; overscroll-behavior: contain; visibility: visible; opacity: 1; }
     .page-humor .navegacion__enlace { width: 100%; min-height: 4.4rem; justify-content: flex-start; padding: 1rem 1.2rem; font-size: 1.25rem; }
     .humor-hero { padding: 1.4rem 0 1.2rem; text-align: left; }
     .humor-heading { align-items: flex-start; }

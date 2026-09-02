@@ -169,10 +169,11 @@ body.page-accion {
   .header { min-height: 64px; height: 64px; }
   .header__container { position: relative; width: calc(100% - 24px); display: flex; flex-direction: row; justify-content: space-between; }
   .header__logo--img { width: 128px; height: auto; }
-  .hamburger { display: block; }
+  .hamburger { position: static; flex: 0 0 44px; width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .hamburger span { display: block; width: 19px; height: 2px; margin: 2px auto; border-radius: 2px; background: currentColor; }
   .navegacion { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: grid; max-height: 0; margin: 0; padding: 0 1rem; overflow: hidden; background: rgba(76,5,25,.985); opacity: 0; transition: max-height 300ms var(--action-ease), opacity 200ms ease, padding 300ms var(--action-ease); }
-  .navegacion.is-open, .navegacion.navegacion--visible, .navegacion.navegacion--active { max-height: 480px; padding-block: .75rem 1rem; opacity: 1; visibility: visible; }
-  .navegacion__enlace { justify-content: center; min-height: 42px; }
+  .navegacion.is-open, .navegacion.navegacion--visible, .navegacion.navegacion--active { max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px); padding-block: .75rem 1rem; overflow-y: auto; overscroll-behavior: contain; opacity: 1; visibility: visible; }
+  .navegacion__enlace { justify-content: center; min-height: 44px; }
   .action-layout { grid-template-columns: 1fr; }
   .action-aside { position: static; width: min(100%, 560px); margin-inline: auto; }
 }
