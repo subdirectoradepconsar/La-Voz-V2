@@ -52,8 +52,6 @@
 .humor-heading { display: flex; flex-direction: column; align-items: center; }
 .humor-eyebrow { margin-bottom: .25rem; color: var(--humor-orange-700); font-size: 1.05rem; font-weight: 700; letter-spacing: .13em; line-height: 1.4; text-transform: uppercase; }
 .page-humor h1 { max-width: 780px; margin: 0 auto 1rem; color: var(--humor-text); font-family: var(--humor-font-heading); font-size: clamp(2.6rem, 3vw, 3rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; text-wrap: balance; }
-.good-vibes { width: fit-content; margin: 0 auto; padding: .65rem 1.1rem; display: flex; align-items: center; gap: .7rem; color: var(--humor-orange-900); background: rgb(255 247 240 / 88%); border: 1px solid #f8d8c1; border-radius: .8rem; box-shadow: 0 4px 14px rgb(198 83 26 / 5%); font: 600 1.15rem/1.45 var(--humor-font-body); }
-.good-vibes__spark { flex: 0 0 1.8rem; width: 1.8rem; height: 1.8rem; display: grid; place-items: center; color: var(--humor-orange-700); background: var(--humor-orange-100); border-radius: 50%; font-size: 1rem; }
 
 /* Tarjetas limpias */
 .humor-feed { padding: 0 0 clamp(6rem, 9vw, 10rem); }
@@ -116,7 +114,6 @@
     .humor-hero { padding: 1.4rem 0 1.2rem; text-align: left; }
     .humor-heading { align-items: flex-start; }
     .page-humor h1 { margin-inline: 0; font-size: clamp(2.5rem, 8vw, 3rem); }
-    .good-vibes { width: 100%; margin-inline: 0; }
     .humor-gallery { grid-template-columns: 1fr; }
     .meme-card:last-child { grid-column: auto; width: 100%; }
     .meme-card:hover { transform: none; }
@@ -137,7 +134,6 @@
 /* Escala de legibilidad y componentes: +30% */
 .humor-eyebrow { font-size: 1.4rem; }
 .page-humor h1 { max-width: 920px; font-size: clamp(3.4rem, 4vw, 4.2rem); }
-.good-vibes { padding: .9rem 1.45rem; font-size: 1.55rem; line-height: 1.65; }
 .humor-gallery { gap: 2.6rem; }
 .meme-card { padding: 1.3rem; border-radius: 2.1rem; }
 .meme-card__overlay { padding: .85rem 1.4rem; font-size: 1.45rem; }

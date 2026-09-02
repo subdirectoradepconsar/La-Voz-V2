@@ -54,6 +54,7 @@
 .disclaimer { width: fit-content; max-width: 760px; margin: 0 auto; padding: .65rem 1.1rem; display: flex; align-items: center; gap: .7rem; color: #65536f; background: var(--conexion-purple-50); border: 1px solid #eadcf3; border-radius: .8rem; text-align: left; }
 .disclaimer p { margin: 0; color: inherit; font: 500 1.15rem/1.45 var(--conexion-font-body); }
 .disclaimer__icon { flex: 0 0 1.8rem; width: 1.8rem; height: 1.8rem; display: grid; place-items: center; color: var(--conexion-purple-900); background: var(--conexion-purple-100); border-radius: 50%; font-size: 1rem; font-weight: 700; }
+.disclaimer--repeated { grid-column: 1 / -1; width: 100%; max-width: none; margin-block: 0; justify-content: center; }
 
 /* Tarjetas */
 .conexion-content { padding: 0 0 clamp(6rem, 9vw, 10rem); }

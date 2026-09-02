@@ -2,9 +2,9 @@
     const carousel = document.querySelector(".events-carousel");
     const track = document.querySelector(".events-track");
     const slides = [...document.querySelectorAll(".event-slide")];
-    const dots = [...document.querySelectorAll(".events-dot")];
     const previous = document.querySelector(".events-control--prev");
     const next = document.querySelector(".events-control--next");
+    const controls = document.querySelector(".events-showcase__controls");
     const status = document.querySelector(".events-status");
 
     if (!carousel || !track || slides.length === 0) return;
@@ -24,12 +24,8 @@
             slide.inert = isHidden;
         });
 
-        dots.forEach((dot, dotIndex) => {
-            const isCurrent = dotIndex === current;
-            dot.classList.toggle("is-active", isCurrent);
-            if (isCurrent) dot.setAttribute("aria-current", "true");
-            else dot.removeAttribute("aria-current");
-        });
+        const activeMedia = slides[current].querySelector(".event-slide__media");
+        if (controls && activeMedia) activeMedia.append(controls);
 
         if (status) status.textContent = `Evento ${current + 1} de ${slides.length}`;
     };
@@ -61,8 +57,6 @@
         event.stopPropagation();
         navigateTo(current + 1);
     });
-    dots.forEach((dot, index) => dot.addEventListener("click", () => navigateTo(index)));
-
     carousel.addEventListener("keydown", (event) => {
         if (event.key === "ArrowLeft") navigateTo(current - 1);
         if (event.key === "ArrowRight") navigateTo(current + 1);

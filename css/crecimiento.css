@@ -67,7 +67,7 @@
 .pillar-card { min-width: 0; padding: clamp(2.2rem, 3vw, 3rem); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
 .pillar-card:hover { transform: translateY(-2px); border-color: rgb(var(--growth-primary-rgb) / 30%); box-shadow: var(--growth-shadow-hover); }
 .pillar-card h2 { margin: 0 0 1.4rem; color: var(--growth-text); font-family: var(--growth-font-heading); font-size: clamp(2.1rem, 2.5vw, 2.7rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.22; text-transform: none; }
-.pillar-card > p:not(.pillar-label) { margin-bottom: 1.5rem; color: var(--growth-muted); font-size: 1.48rem; line-height: 1.72; }
+.pillar-card > p:not(.pillar-label):not(.growth-badge) { margin-bottom: 1.5rem; color: var(--growth-muted); font-size: 1.48rem; line-height: 1.72; }
 .pillar-card > p:last-child { margin-bottom: 0; }
 .dimensions-list, .accent-list { margin: 2rem 0 0; padding: 0; display: grid; gap: 1.2rem; list-style: none; }
 .dimensions-list li { padding: 1.2rem 1.3rem; display: flex; align-items: baseline; gap: 1.15rem; background: #fcfcfb; border: 1px solid #f0ede7; border-radius: 1rem; }
@@ -82,7 +82,7 @@
 .learning-steps li::before { content: counter(learning-step); position: absolute; top: 1.35rem; left: 1.4rem; width: 2.4rem; height: 2.4rem; display: grid; place-items: center; color: #fff; background: var(--growth-accent); border-radius: 50%; font-size: 1.25rem; font-weight: 800; line-height: 1; }
 .learning-steps strong { color: var(--growth-accent); font-size: 1.5rem; }
 .learning-steps span { color: var(--growth-muted); font-size: 1.4rem; line-height: 1.6; }
-.learning-closing { margin: 2rem 0 0 !important; padding-top: 1.5rem; color: var(--growth-accent) !important; border-top: 1px solid rgb(var(--growth-primary-rgb) / 24%); font-weight: 700; }
+.growth-badge--closing { margin: 2rem 0 0; }
 .pillar-card--accent { background: linear-gradient(145deg, #ffffff, rgb(var(--growth-primary-rgb) / 8%)); border-color: rgb(var(--growth-primary-rgb) / 30%); }
 
 /* Footer claro */
@@ -134,11 +134,10 @@
 .growth-eyebrow, .pillar-label { font-size: 1.4rem; }
 .page-crecimiento h1 { font-size: clamp(4.4rem, 6vw, 6.2rem); }
 .growth-badge { font-size: 1.6rem; }
-.growth-intro, .pillar-card > p, .dimensions-list, .accent-list, .learning-steps { font-size: 2rem; line-height: 1.8; }
+.growth-intro, .pillar-card > p:not(.pillar-label):not(.growth-badge), .dimensions-list, .accent-list, .learning-steps { font-size: 2rem; line-height: 1.8; }
 .dimensions-list strong { font-size: 1.8rem; }
 .dimensions-list span, .accent-list li, .learning-steps span { font-size: 1.8rem; line-height: 1.8; }
 .learning-steps strong { font-size: 1.8rem; }
-.pillar-card > p:not(.pillar-label) { font-size: 1.9rem; line-height: 1.75; }
-.pillar-card > p.learning-closing { font-size: 2rem; line-height: 1.65; }
+.pillar-card > p:not(.pillar-label):not(.growth-badge) { font-size: 1.9rem; line-height: 1.75; }
 .pillar-card h2 { font-size: clamp(2.8rem, 3.5vw, 3.8rem); }
 .pillar-card { padding: clamp(2.6rem, 4vw, 4rem); }

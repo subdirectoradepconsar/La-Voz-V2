@@ -23,7 +23,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css?v=20260825-2">
-    <link rel="stylesheet" href="css/a_tiempo_libre.css?v=20260831-1">
+    <link rel="stylesheet" href="css/a_tiempo_libre.css?v=20260901-2">
 </head>
 
 <body class="page-tiempo">
@@ -87,7 +87,7 @@
                                 class="leisure-category-gif" src="img/tiempo_libre/gift/libro.gif" alt=""
                                 aria-hidden="true"></div>
                         <h2>Almendra</h2>
-                        <p class="leisure-byline">Won-pyung Sohn</p>
+                        <p class="leisure-byline"><span class="leisure-byline__label">Autora</span><span>Won-pyung Sohn</span></p>
                         <p class="leisure-card__description">Una historia sobre las emociones, la empatía y la
                             importancia de conectar con los demás. Una
                             lectura sencilla que invita a reflexionar sobre cómo nos relacionamos con quienes nos
@@ -110,7 +110,7 @@
                                 class="leisure-category-gif" src="img/tiempo_libre/gift/podcast.gif" alt=""
                                 aria-hidden="true"></div>
                         <h2>Educa tu dinero</h2>
-                        <p class="leisure-byline">Borja Nicolau</p>
+                        <p class="leisure-byline"><span class="leisure-byline__label">Conducción</span><span>Borja Nicolau</span></p>
                         <p class="leisure-card__description">Expertos en finanzas comparten consejos prácticos para
                             tomar mejores decisiones sobre el
                             ahorro, la jubilación y nuestro dinero.</p>
@@ -131,7 +131,7 @@
                                 class="leisure-category-gif" src="img/tiempo_libre/gift/accion.gif" alt=""
                                 aria-hidden="true"></div>
                         <h2>Chicuarotes</h2>
-                        <p class="leisure-byline">Gael Harcía Bernal</p>
+                        <p class="leisure-byline"><span class="leisure-byline__label">Dirección</span><span>Gael García Bernal</span></p>
                         <p class="leisure-card__description">Una historia sobre amistad, juventud y las dificultades que
                             enfrentan dos jóvenes en un
                             entorno marcado por la desigualdad. Una mirada cruda a una realidad de México.</p>
@@ -167,6 +167,10 @@
                         <rect x="3" y="5" width="18" height="16" rx="2"></rect>
                         <path d="M8 3v4M16 3v4M3 10h18"></path>
                     </symbol>
+                    <symbol id="detail-icon-clock" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 7v5l3.5 2"></path>
+                    </symbol>
                 </svg>
 
                 <div class="events-carousel" aria-roledescription="carrusel" aria-label="Eventos recomendados"
@@ -183,6 +187,12 @@
                                         alt="Escenas de Interestelar y una orquesta sinfónica en concierto" loading="lazy">
                                 </span>
                                 <span class="event-slide__swipe-hint">Desliza <b aria-hidden="true">↔</b></span>
+                                <div class="events-showcase__controls" aria-label="Controles del carrusel">
+                                    <button class="events-control events-control--prev" type="button"
+                                        aria-label="Ver evento anterior">←</button>
+                                    <button class="events-control events-control--next" type="button"
+                                        aria-label="Ver evento siguiente">→</button>
+                                </div>
                             </div>
                             <div class="event-slide__body">
                                 <span class="leisure-category leisure-category--event">Concierto</span>
@@ -190,10 +200,11 @@
                                 <p>Una experiencia que combina la proyección de Interestelar con música en vivo para
                                     volver a vivir una de las películas de ciencia ficción más memorables.</p>
                                 <ul class="leisure-details">
-                                    <li class="leisure-detail--paid"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-money"></use></svg><span>Desde $699 MXN</span></li>
+                                    <li class="leisure-detail--paid"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-money"></use></svg><span>Desde $899 MXN (No incluye cargos por servicio)</span></li>
                                     <li class="leisure-detail--location"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-location"></use></svg><span>Teatro Xola Julio Prieto</span></li>
                                     <li class="leisure-detail--date"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-calendar"></use></svg><span>4 y 11 de septiembre</span></li>
                                 </ul>
+                                <p class="event-slide__disclaimer">Precios y disponibilidad sujetos a cambio, consultar con el organizador.</p>
                             </div>
                         </article>
 
@@ -219,6 +230,7 @@
                                     <li class="leisure-detail--paid"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-money"></use></svg><span>Desde $499 MXN</span></li>
                                     <li class="leisure-detail--location"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-location"></use></svg><span>Perisur</span></li>
                                     <li class="leisure-detail--date"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-calendar"></use></svg><span>14 de agosto - 30 de septiembre</span></li>
+                                    <li class="leisure-detail--time"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-clock"></use></svg><span>11:00 am a 8:00 pm (lunes cerrado)</span></li>
                                 </ul>
                             </div>
                         </article>
@@ -238,27 +250,14 @@
                                 <ul class="leisure-details">
                                     <li class="leisure-detail--free"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-free"></use></svg><span>Entrada libre</span></li>
                                     <li class="leisure-detail--location"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-location"></use></svg><span>Coyoacán</span></li>
-                                    <li class="leisure-detail--date"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-calendar"></use></svg><span>24, 25 y 30 de julio</span></li>
+                                    <li class="leisure-detail--date"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-calendar"></use></svg><span>11, 12 y 13 de septiembre</span></li>
+                                    <li class="leisure-detail--time"><svg class="leisure-detail__icon" aria-hidden="true"><use href="#detail-icon-clock"></use></svg><span>12:00 PM a 08:00 PM</span></li>
                                 </ul>
                             </div>
                         </article>
                     </div>
-                    <div class="events-showcase__controls" aria-label="Controles del carrusel">
-                        <button class="events-control events-control--prev" type="button"
-                            aria-label="Ver evento anterior">←</button>
-                        <button class="events-control events-control--next" type="button"
-                            aria-label="Ver evento siguiente">→</button>
-                    </div>
                 </div>
 
-                <div class="events-dots" aria-label="Seleccionar evento">
-                    <button class="events-dot is-active" type="button"
-                        aria-label="Mostrar Interestelar 12° Aniversario Movie Concert"
-                        aria-current="true"></button>
-                    <button class="events-dot" type="button" aria-label="Mostrar Experiencia de Monopoly"></button>
-                    <button class="events-dot" type="button"
-                        aria-label="Mostrar Feria Artesanal del Café y Chocolate"></button>
-                </div>
                 <p class="events-status" aria-live="polite">Evento 1 de 3</p>
             </section>
         </section>
@@ -267,7 +266,7 @@
     <footer class="footer">
         <div class="footer__inner">
             <p class="footer__texto2">© Comisión Nacional del Sistema de Ahorro para el Retiro. Todos los derechos
-                reservados.</p>
+                reservados. 2026.</p>
             <div class="footer-socials" role="group" aria-label="Redes sociales de CONSAR">
                 <a href="https://www.facebook.com/ConsarMexico/?locale=es_LA" target="_blank" rel="noopener noreferrer"
                     aria-label="Facebook de CONSAR"><img src="img/icons/facebook.svg" alt=""></a>
@@ -290,7 +289,7 @@
     </footer>
 
     <script src="js/logica.js"></script>
-    <script src="js/tiempo_libre.js?v=20260831-2"></script>
+    <script src="js/tiempo_libre.js?v=20260901-2"></script>
 </body>
 
 </html>
