@@ -51,7 +51,7 @@ img { max-width: 100%; }
 .hero-showcase::before { content: ""; position: absolute; inset: 1.2rem; z-index: -1; pointer-events: none; border: 1px solid rgb(15 159 143 / 7%); border-radius: 1.8rem; }
 .hero-showcase__glow { position: absolute; z-index: -2; border-radius: 50%; filter: blur(2px); pointer-events: none; }
 .hero-showcase__glow--one { width: 38rem; height: 38rem; left: -16rem; bottom: -15rem; background: radial-gradient(circle, rgb(15 159 143 / 12%), transparent 68%); }
-.hero-showcase__glow--two { width: 32rem; height: 32rem; right: -12rem; top: -12rem; background: radial-gradient(circle, rgb(8 25 45 / 7%), transparent 68%); }
+.hero-showcase__glow--two { width: 32rem; height: 32rem; right: -12rem; top: -12rem; background: radial-gradient(circle, rgb(255 137 36 / 16%), transparent 68%); }
 @keyframes hero-enter { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 .hero-visual { position: relative; min-width: 0; margin: 0; display: grid; place-items: center; }
@@ -62,8 +62,8 @@ img { max-width: 100%; }
 .hero-visual--toy img { width: auto; max-width: 28rem; max-height: 46vh; transform-origin: 50% 70%; animation: toy-sway 5.5s ease-in-out infinite; transition: transform .45s var(--index-ease); }
 .hero-visual--toy:hover img { animation-play-state: paused; transform: rotate(7deg) translateY(-4px); }
 .hero-visual__halo { position: absolute; width: 85%; aspect-ratio: 1; background: radial-gradient(circle, rgb(15 159 143 / 14%), transparent 68%); border-radius: 50%; }
-.hero-visual__orbit { position: absolute; width: 92%; aspect-ratio: 1; border: 1px dashed rgb(15 159 143 / 18%); border-radius: 50%; animation: orbit 18s linear infinite; }
-.hero-visual__orbit::before, .hero-visual__orbit::after { content: ""; position: absolute; width: .9rem; height: .9rem; background: #5bd2c4; border-radius: 50%; }
+.hero-visual__orbit { position: absolute; width: 92%; aspect-ratio: 1; border: 1px dashed rgb(255 137 36 / 45%); border-radius: 50%; box-shadow: 0 0 3rem rgb(255 137 36 / 16%); animation: orbit 18s linear infinite; }
+.hero-visual__orbit::before, .hero-visual__orbit::after { content: ""; position: absolute; width: .9rem; height: .9rem; background: #ff9d32; box-shadow: 0 0 1rem rgb(255 137 36 / 70%); border-radius: 50%; }
 .hero-visual__orbit::before { top: 8%; left: 25%; }
 .hero-visual__orbit::after { right: 4%; bottom: 32%; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
