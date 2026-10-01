@@ -55,7 +55,7 @@ img { max-width: 100%; }
 @keyframes hero-enter { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 .hero-visual { position: relative; min-width: 0; margin: 0; display: grid; place-items: center; }
-.hero-visual--character { transform: translateX(-5rem); }
+.hero-visual--character { transform: translateX(-1rem); }
 .hero-visual--toy { transform: translateX(5rem); }
 .hero-visual img { position: relative; z-index: 1; display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 22px 20px rgb(15 23 42 / 12%)); }
 .hero-visual--character img { width: auto; max-width: 32rem; max-height: 48vh; animation: float 5s ease-in-out infinite; }

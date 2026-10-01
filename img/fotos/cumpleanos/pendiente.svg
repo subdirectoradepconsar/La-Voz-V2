@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Fotografía pendiente">
+  <rect width="96" height="96" rx="20" fill="#f1f5f9"/>
+  <circle cx="48" cy="37" r="15" fill="#cbd5e1"/>
+  <path d="M19 86c2-17 14-27 29-27s27 10 29 27" fill="#cbd5e1"/>
+</svg>
