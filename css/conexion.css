@@ -100,10 +100,10 @@
 .media-artesanal { --media-aspect: 3 / 2; }
 .media-wings, .media-gauffles { --media-aspect: 1; }
 .media-gauffles { background: #41b8d0; }
-.media-galletas, .media-salsas { --media-aspect: 3 / 4; }
+.media-galletas, .media-salsas { --media-aspect: 1280 / 794; }
 .media-jardin { --media-aspect: 1280 / 794; }
 .media-letreros { --media-aspect: 4 / 3; }
-.media-tada { --media-aspect: 1200 / 896; background: #fbf9fa; }
+.media-tada { --media-aspect: 1622 / 970; background: #fbf9fa; }
 .menu-placeholder { padding: 3rem; display: grid; place-content: center; place-items: center; gap: .8rem; color: var(--conexion-purple-900); background: radial-gradient(circle at 50% 35%, #fff 0, var(--conexion-purple-50) 68%, var(--conexion-purple-100) 100%); text-align: center; }
 .menu-placeholder::before { content: ""; position: absolute; inset: 2rem; border: 2px dashed rgb(123 44 191 / 25%); border-radius: 1.4rem; pointer-events: none; }
 .menu-placeholder__icon { font-size: 6rem; line-height: 1; filter: drop-shadow(0 .6rem 1rem rgb(60 9 108 / 12%)); }
