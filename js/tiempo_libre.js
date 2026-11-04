@@ -81,3 +81,43 @@
     showSlide(0);
     scheduleAutoplay();
 })();
+
+(() => {
+    const modal = document.getElementById("leisure-event-modal");
+    const closeBtn = document.getElementById("leisure-modal-close");
+    if (!modal || !closeBtn) return;
+
+    const openModal = () => {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.removeProperty("overflow");
+    };
+
+    window.setTimeout(() => {
+        window.requestAnimationFrame(openModal);
+    }, 180);
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+            closeModal();
+        }
+    });
+
+    const activeNavLinks = document.querySelectorAll('.navegacion__enlace[aria-current="page"]');
+    activeNavLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            openModal();
+        });
+    });
+})();

@@ -248,3 +248,89 @@
 .events-showcase__heading h2 { font-size: clamp(2.9rem, 3.5vw, 3.7rem); }
 .event-slide__body h3 { font-size: clamp(3rem, 3.8vw, 4.1rem); }
 .event-slide__body > p { font-size: 1.8rem; line-height: 1.8; }
+
+
+/* Ventana emergente de evento (pura imagen) */
+.leisure-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    padding: clamp(1.2rem, 3vw, 2.4rem);
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: rgb(15 23 42 / 78%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity .65s cubic-bezier(.22, 1, .36, 1), visibility .65s ease;
+}
+
+.leisure-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.leisure-modal__dialog {
+    position: relative;
+    width: fit-content;
+    max-width: min(92vw, 54rem);
+    max-height: 90vh;
+    max-height: 90dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 28px 80px rgb(0 0 0 / 55%);
+    opacity: 0;
+    transform: translateY(24px) scale(.94);
+    transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.leisure-modal.is-open .leisure-modal__dialog {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.leisure-modal__image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 90vh;
+    max-height: 90dvh;
+    object-fit: contain;
+    border-radius: 2rem;
+}
+
+.leisure-modal__close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 2;
+    width: 4.2rem;
+    height: 4.2rem;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: rgb(15 23 42 / 68%);
+    border: 1px solid rgb(255 255 255 / 28%);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 35%);
+    cursor: pointer;
+    font-size: 2.6rem;
+    line-height: 1;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.leisure-modal__close:hover,
+.leisure-modal__close:focus-visible {
+    background: rgb(15 23 42 / 90%);
+    transform: scale(1.06);
+}
